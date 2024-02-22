@@ -1,4 +1,7 @@
+import controlP5.*;
 GameStateManager manager;
+
+  ControlP5 cp5;
 
 void setup(){
   manager = new GameStateManager();
@@ -10,12 +13,24 @@ void setup(){
   manager.skiftGameState("mainScreen");
   
   
+
   
   
+    cp5 = new ControlP5(this);
+      cp5.addButton("colorA")
+     .setValue(0)
+     .setPosition(100,100)
+     .setSize(200,19)
+     ;
   
-  
-  
-  
+  PImage[] imgs = {loadImage("bruh2.png"),loadImage("bruh3.jpg"),loadImage("bruh4.png")};
+  cp5.addButton("play")
+     .setValue(128)
+     .setPosition(140,300)
+     .setImages(imgs)
+     .updateSize()
+     ;
+       
   
   
   
@@ -69,8 +84,7 @@ ArrayList hand = new ArrayList();
 int handArea = width/4*3-width/4*1;
 
 void draw() {
-  funny();
-  background(0, 0, 255);
+  background(0,0, 255);
   if (hand.size()>0) {
     if (width/2-hand.size()*cardlength/2>width/4) {
       for (int i=0; i<=hand.size(); i++) {
@@ -79,7 +93,7 @@ void draw() {
       }
     }
     else {
-      for (int i=0; i<=hand.size(); i++) {
+      for (int i=0; i<=hand.size()-1; i++) {
         fill (255, 0, 0);
         rect(width/4*2/hand.size()*i+width/4*1-cardlength/2, height/4*3, cardlength, cardheight);
       }
@@ -98,11 +112,7 @@ void cardDraw() {
 void mill() {
   println("bruh");
 }
-void funny() {
-  if (mousePressed) {
-    cardDraw();
-  }
-}
+
 
 //  cardDraw();
 //  if(deck.size()>0){
@@ -113,3 +123,28 @@ void funny() {
 //  println("hand"+hand.get(i));
 //}
 //}
+
+
+
+public void controlEvent(ControlEvent theEvent) {
+  println(theEvent.getController().getName());
+}
+
+// function colorA will receive changes from 
+// controller with name colorA
+public void colorA() {
+  println("a button event from colorA: ");
+}
+
+// function colorB will receive changes from 
+// controller with name colorB
+public void colorB() {
+  println("a button event from colorB: ");
+}
+
+// function colorC will receive changes from 
+// controller with name colorC
+public void play() {
+  println("a button event from colorC: ");
+  cardDraw();
+}
