@@ -2,7 +2,7 @@ interface Builder{
   //musts
   Builder setNavn(String name);
   Builder setMana(int mana);
-  Builder Unit(boolean unit);
+  Builder Minion(boolean minion);
   
   //if monster
   Builder setPower(int p);

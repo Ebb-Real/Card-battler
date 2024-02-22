@@ -15,12 +15,12 @@ class BygCard implements Builder {
     return this;
   }
   
-  BygCard Unit(boolean u) {
-    Card.unit = u;
+  BygCard Minion(boolean m) {
+    Card.minion = m;
     return this;
   }
   
-  //Unit
+  //Minion
   BygCard setHealth(int h) {
     Card.health = h;
     return this;
