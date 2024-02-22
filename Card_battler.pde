@@ -51,7 +51,8 @@ void draw() {
         fill (255, 0, 0);
         rect(width/2-hand.size()*cardlength/2+i*cardlength-cardlength/2, height/4*3, cardlength, cardheight+width/4);
       }
-    } else {
+    }
+    else {
       for (int i=0; i<=hand.size(); i++) {
         fill (255, 0, 0);
         rect(width/4*2/hand.size()*i+width/4*1-cardlength/2, height/4*3, cardlength, cardheight);
