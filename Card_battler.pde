@@ -41,18 +41,22 @@ ArrayList deck = new ArrayList();
 ArrayList hand = new ArrayList();
 int handArea = width/4*3-width/4*1;
 void draw(){
-if(mousePressed){
-cardDraw();
-}
+funny();
 background(0,0,255);
 if(hand.size()>0){
+  if(width/2-hand.size()*cardlength/2>width/4){
+for(int i=0; i<=hand.size(); i++){
+fill (255,0,0);
+rect(width/2-hand.size()*cardlength/2+i*cardlength-cardlength/2,height/4*3,cardlength,cardheight+width/4);
+}
+}
+else{
 for(int i=0; i<=hand.size(); i++){
 fill (255,0,0);
 rect(width/4*2/hand.size()*i+width/4*1-cardlength/2,height/4*3,cardlength,cardheight);
 }
 }
-//fill(255);
-//rect(width/4*1,height/4*3,width/4*2,height/4*1);
+}
 }
 void cardDraw(){
   if(deck.size()>0){
