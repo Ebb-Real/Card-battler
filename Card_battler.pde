@@ -1,4 +1,30 @@
-void setup() {
+GameStateManager manager;
+
+void setup(){
+  manager = new GameStateManager();
+  
+  
+  
+  
+  manager.tilFoejGameState("mainScreen", new mainScreen());
+  manager.skiftGameState("mainScreen");
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   fullScreen();
   deck.add(1);
   deck.add(3);
