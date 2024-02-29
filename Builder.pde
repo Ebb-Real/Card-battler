@@ -1,15 +1,15 @@
-interface Builder{
+interface builder{
   //musts
-  Builder setNavn(String name);
-  Builder setMana(int mana);
-  Builder Minion(boolean minion);
+  builder setNavn(String name);
+  builder setMana(int mana);
+  builder Minion(boolean minion);
   
   //if monster
-  Builder setPower(int p);
-  Builder setHealth(int h);
+  builder setPower(int p);
+  builder setHealth(int h);
   
   //if spell
-  Builder setDamage(int d);
-  Builder setHeal(int h);
+  builder setDamage(int d);
+  builder setHeal(int h);
   CardBP build();
 }

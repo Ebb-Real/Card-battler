@@ -1,4 +1,4 @@
-class BygCard implements Builder {
+class BygCard implements builder {
   CardBP Card;
 
   BygCard() {

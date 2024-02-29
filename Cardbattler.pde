@@ -16,8 +16,8 @@ healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).buil
   
   
   
-  manager.tilFoejGameState("mainScreen", new mainScreen());
-  manager.skiftGameState("mainScreen");
+ // manager.tilFoejGameState("mainScreen", new mainScreen());
+ // manager.skiftGameState("mainScreen");
   
   
 
