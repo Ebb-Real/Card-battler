@@ -94,7 +94,7 @@ void draw() {
   background(0,0, 255);
   if (hand.size()>0) {
     if (width/2-hand.size()*cardlength/2>width/4) {
-      for (int i=0; i<=hand.size(); i++) {
+      for (int i=0; i<=hand.size()-1; i++) {
         fill (255, 0, 0);
         rect(width/2-hand.size()*cardlength/2+i*cardlength-cardlength/2, height/4*3, cardlength, cardheight+width/4);
       }
