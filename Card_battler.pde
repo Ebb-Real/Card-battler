@@ -3,7 +3,8 @@ GameStateManager manager;
 
   ControlP5 cp5;
 
-void setup(){
+  
+  
   manager = new GameStateManager();
   
   

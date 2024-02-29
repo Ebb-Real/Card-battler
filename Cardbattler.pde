@@ -3,8 +3,15 @@ GameStateManager manager;
 
   ControlP5 cp5;
 
+//cards
+CardBP claw, healingHands;
+
 void setup(){
-  manager = new GameStateManager();
+  
+  //card library
+claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
+healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
+  
   
   
   
