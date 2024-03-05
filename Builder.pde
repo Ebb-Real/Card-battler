@@ -3,6 +3,8 @@ interface builder{
   builder setNavn(String name);
   builder setMana(int mana);
   builder Minion(boolean minion);
+  builder setPosX(float setPosX);
+  builder setPosY(float swtPosY);
   
   //if monster
   builder setPower(int p);
