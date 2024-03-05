@@ -18,12 +18,8 @@ void setup() {
   //card library
   claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
   healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
-
-  // manager.tilFoejGameState("mainScreen", new mainScreen());
-  // manager.skiftGameState("mainScreen");
   
-  
-//GUI
+  //GUI
   cp5 = new ControlP5(this);
   cp5.addButton("colorA")
     .setValue(0)
@@ -79,20 +75,20 @@ public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());
 }
 
-// function colorA will receive changes from
-// controller with name colorA
+//function colorA will receive changes from
+//controller with name colorA
 public void colorA() {
   println("a button event from colorA: ");
 }
 
-// function colorB will receive changes from
-// controller with name colorB
+//function colorB will receive changes from
+//controller with name colorB
 public void colorB() {
   println("a button event from colorB: ");
 }
 
-// function colorC will receive changes from
-// controller with name colorC
+//function colorC will receive changes from
+//controller with name colorC
 public void play() {
   println("a button event from colorC: ");
   cardDraw();

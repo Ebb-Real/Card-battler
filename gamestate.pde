@@ -1,4 +1,4 @@
-  int moonSelector=0;
+int moonSelector=0;
 class GameState {
   int xpos=125;
   int ypos=50;
@@ -18,7 +18,6 @@ class GameState {
     
   }
   
-  
   //Lave om så det kan bruges med GUI lib ControlP5
   void returnbutton() {
     PImage img=loadImage("bruh.png");
@@ -30,6 +29,6 @@ class GameState {
     if (mouseX > xpos-buttonwidth/2 && mouseX < xpos + buttonwidth/2 && mouseY > ypos-buttonheight/2 && mouseY < ypos+buttonheight/2 && mousePressed) {
       mainScreen =! mainScreen;
       manager.skiftGameState("mainScreen");
-      }
+    }
   }
 }
