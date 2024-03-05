@@ -1,7 +1,13 @@
 import controlP5.*;
 GameStateManager manager;
 
-  ControlP5 cp5;
+ControlP5 cp5;
+
+public int cardlength = 150;
+public int cardheight = 300;
+ArrayList deck = new ArrayList();
+ArrayList hand = new ArrayList();
+int handArea = width/4*3-width/4*1;
 
 //cards
 CardBP claw, healingHands;
@@ -52,12 +58,6 @@ healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).buil
   deck.add(healingHands);
 }
 
-public int cardlength = 150;
-public int cardheight = 300;
-ArrayList deck = new ArrayList();
-ArrayList hand = new ArrayList();
-int handArea = width/4*3-width/4*1;
-
 void draw() {
   background(0,0, 255);
   if (hand.size()>0) {
@@ -74,6 +74,7 @@ void draw() {
       }
     }
   }
+  println(deck.get(1));
 }
 
 void cardDraw() {
