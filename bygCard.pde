@@ -42,6 +42,16 @@ class BygCard implements builder {
     return this;
   }
   
+  BygCard setPosX(int pox) {
+    Card.posX = pox;
+    return this;
+  }
+  
+  BygCard setPosY(int poy) {
+    Card.posY = poy;
+    return this;
+  }
+  
   CardBP build() {
     return Card;
   }

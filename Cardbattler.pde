@@ -48,40 +48,8 @@ healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).buil
   
   
   fullScreen();
-  deck.add(1);
-  deck.add(3);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(3);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(1);
-  deck.add(3);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(3);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
-  deck.add(7);
+  deck.add(claw);
+  deck.add(healingHands);
 }
 
 public int cardlength = 150;

@@ -6,6 +6,6 @@ class CardBP{
    int health;
    int damage;
    int heal;
-   float posX;
-   float posY;
+   float posX = 0;
+   float posY = 0;
 }
