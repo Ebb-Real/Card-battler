@@ -14,7 +14,6 @@ int handArea = width/4*3-width/4*1;
 Card claw, healingHands;
 
 void setup() {
-
   //card library
   claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
   healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
