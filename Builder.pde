@@ -1,5 +1,6 @@
+//the builder interface
 interface builder{
-  //musts
+  //generic data
   builder setNavn(String name);
   builder setMana(int mana);
   builder Minion(boolean minion);

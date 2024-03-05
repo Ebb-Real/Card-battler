@@ -3,6 +3,7 @@ GameStateManager manager;
 
 ControlP5 cp5;
 
+//integers and arraylists
 public int cardlength = 150;
 public int cardheight = 300;
 ArrayList<CardBP> deck = new ArrayList<CardBP>();
@@ -20,7 +21,9 @@ void setup() {
 
   // manager.tilFoejGameState("mainScreen", new mainScreen());
   // manager.skiftGameState("mainScreen");
-
+  
+  
+//GUI
   cp5 = new ControlP5(this);
   cp5.addButton("colorA")
     .setValue(0)
@@ -70,16 +73,6 @@ void cardDraw() {
 void mill() {
   println("bruh");
 }
-
-//  cardDraw();
-//  if(deck.size()>0){
-//  println("deck"+deck.get(0));
-//}
-//  if(hand.size()>0){
-//   for (int i = 0; i < hand.size(); i++) {
-//  println("hand"+hand.get(i));
-//}
-//}
 
 public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());

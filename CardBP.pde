@@ -1,3 +1,4 @@
+//card  base
 class CardBP{
    String navn;
    int mana; 

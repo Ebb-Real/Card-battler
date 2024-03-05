@@ -1,3 +1,4 @@
+//implementation of builder
 class BygCard implements builder {
   CardBP Card;
 
