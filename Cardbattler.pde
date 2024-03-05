@@ -6,7 +6,7 @@ ControlP5 cp5;
 public int cardlength = 150;
 public int cardheight = 300;
 ArrayList<CardBP> deck = new ArrayList<CardBP>();
-ArrayList hand = new ArrayList();
+ArrayList<CardBP> hand = new ArrayList<CardBP>();
 int handArea = width/4*3-width/4*1;
 
 //cards
@@ -73,7 +73,6 @@ void draw() {
       }
     }
   }
-  println(deck.get(0).mana);
 }
 
 void cardDraw() {
