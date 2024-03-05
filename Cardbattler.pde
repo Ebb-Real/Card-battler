@@ -5,12 +5,12 @@ ControlP5 cp5;
 
 public int cardlength = 150;
 public int cardheight = 300;
-ArrayList<CardBP> deck = new ArrayList<CardBP>();
-ArrayList<CardBP> hand = new ArrayList<CardBP>();
+ArrayList<Card> deck = new ArrayList<Card>();
+ArrayList<Card> hand = new ArrayList<Card>();
 int handArea = width/4*3-width/4*1;
 
 //cards
-CardBP claw, healingHands;
+Card claw, healingHands;
 
 void setup() {
 

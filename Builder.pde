@@ -4,7 +4,7 @@ interface builder{
   builder setMana(int mana);
   builder Minion(boolean minion);
   builder setPosX(float setPosX);
-  builder setPosY(float swtPosY);
+  builder setPosY(float setPosY);
   
   //if monster
   builder setPower(int p);
@@ -13,5 +13,5 @@ interface builder{
   //if spell
   builder setDamage(int d);
   builder setHeal(int h);
-  CardBP build();
+  Card build();
 }
