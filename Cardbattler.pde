@@ -18,16 +18,8 @@ void setup() {
   claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
   healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
 
-
-
-
-
   // manager.tilFoejGameState("mainScreen", new mainScreen());
   // manager.skiftGameState("mainScreen");
-
-
-
-
 
   cp5 = new ControlP5(this);
   cp5.addButton("colorA")
@@ -44,15 +36,6 @@ void setup() {
     .updateSize()
     ;
 
-
-
-
-
-
-
-
-
-
   fullScreen();
   deck.add(claw);
   deck.add(healingHands);
@@ -67,9 +50,9 @@ void draw() {
         rect(width/2-hand.size()*cardlength/2+i*cardlength-cardlength/2, height/4*3, cardlength, cardheight+width/4);
       }
     } else {
-      for (int i=0; i<=hand.size()-1; i++) {
-        fill (255, 0, 0);
-        rect(width/4*2/hand.size()*i+width/4*1-cardlength/2, height/4*3, cardlength, cardheight);
+        for (int i=0; i<=hand.size()-1; i++) {
+          fill (255, 0, 0);
+          rect(width/4*2/hand.size()*i+width/4*1-cardlength/2, height/4*3, cardlength, cardheight);
       }
     }
   }
@@ -79,14 +62,14 @@ void cardDraw() {
   if (deck.size()>0) {
     hand.add(deck.get(0));
     deck.remove(0);
-  } else {
+  }
+  else {
     mill();
   }
 }
 void mill() {
   println("bruh");
 }
-
 
 //  cardDraw();
 //  if(deck.size()>0){
@@ -97,8 +80,6 @@ void mill() {
 //  println("hand"+hand.get(i));
 //}
 //}
-
-
 
 public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());

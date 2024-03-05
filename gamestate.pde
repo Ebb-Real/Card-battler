@@ -7,17 +7,20 @@ class GameState {
   int scale=4;
 
   void update() {
+    
   }
 
   void musKlikked() {
+    
   }
 
   void draw() {
+    
   }
   
   
   //Lave om så det kan bruges med GUI lib ControlP5
-    void returnbutton() {
+  void returnbutton() {
     PImage img=loadImage("bruh.png");
     buttonheight=img.height/scale;
     buttonwidth=img.width/scale;
@@ -27,7 +30,6 @@ class GameState {
     if (mouseX > xpos-buttonwidth/2 && mouseX < xpos + buttonwidth/2 && mouseY > ypos-buttonheight/2 && mouseY < ypos+buttonheight/2 && mousePressed) {
       mainScreen =! mainScreen;
       manager.skiftGameState("mainScreen");
-    }
-    
-    }
+      }
+  }
 }
