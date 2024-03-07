@@ -8,6 +8,13 @@ CardBP claw, healingHands;
 
 void setup(){
   
+  
+    manager = new GameStateManager();
+  
+    manager.tilFoejGameState("mainScreen", new mainScreen());
+    manager.tilFoejGameState("gamescreen", new gameScreen());
+    manager.skiftGameState("mainScreen");
+  
   //card library
 claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
 healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
@@ -16,22 +23,21 @@ healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).buil
   
   
   
- // manager.tilFoejGameState("mainScreen", new mainScreen());
- // manager.skiftGameState("mainScreen");
+
   
   
 
   
   
     cp5 = new ControlP5(this);
-      cp5.addButton("colorA")
+      cp5.addButton("Start Game")
      .setValue(0)
-     .setPosition(100,100)
+     .setPosition((width/2)-100,height/2)
      .setSize(200,19)
      ;
   
   PImage[] imgs = {loadImage("bruh2.png"),loadImage("bruh3.jpg"),loadImage("bruh4.png")};
-  cp5.addButton("play")
+  cp5.addButton("play")  
      .setValue(128)
      .setPosition(140,300)
      .setImages(imgs)
@@ -139,8 +145,9 @@ public void controlEvent(ControlEvent theEvent) {
 
 // function colorA will receive changes from 
 // controller with name colorA
-public void colorA() {
+public void Start_Game() {
   println("a button event from colorA: ");
+  manager.skiftGameState("gamescreen");
 }
 
 // function colorB will receive changes from 

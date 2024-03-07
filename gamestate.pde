@@ -16,7 +16,7 @@ class GameState {
   }
   
   
-  //Lave om så det kan bruges med GUI lib ControlP5
+  //Skal nok slettes, det er gamle melty return knap.
     void returnbutton() {
     PImage img=loadImage("bruh.png");
     buttonheight=img.height/scale;
