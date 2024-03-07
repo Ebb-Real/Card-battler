@@ -1,4 +1,4 @@
-  int moonSelector=0;
+int moonSelector=0;
 class GameState {
   int xpos=125;
   int ypos=50;
@@ -7,12 +7,15 @@ class GameState {
   int scale=4;
 
   void update() {
+    
   }
 
   void musKlikked() {
+    
   }
 
   void draw() {
+    
   }
   
   
@@ -28,6 +31,5 @@ class GameState {
       mainScreen =! mainScreen;
       manager.skiftGameState("mainScreen");
     }
-    
-    }
+  }
 }

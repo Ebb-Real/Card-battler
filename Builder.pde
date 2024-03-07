@@ -1,8 +1,11 @@
+//the builder interface
 interface builder{
-  //musts
+  //generic data
   builder setNavn(String name);
   builder setMana(int mana);
   builder Minion(boolean minion);
+  builder setPosX(float setPosX);
+  builder setPosY(float setPosY);
   
   //if monster
   builder setPower(int p);
@@ -11,5 +14,5 @@ interface builder{
   //if spell
   builder setDamage(int d);
   builder setHeal(int h);
-  CardBP build();
+  Card build();
 }
