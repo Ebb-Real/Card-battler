@@ -1,4 +1,4 @@
-class mainScreen extends GameState {
+class MainScreen extends GameState {
   
   void draw(){
     
