@@ -1,4 +1,4 @@
-    import controlP5.*;
+import controlP5.*;
 GameStateManager manager;
 
 ControlP5 cp5;
@@ -17,10 +17,11 @@ void setup() {
     
   
     manager = new GameStateManager();
-  
+    
+    
     manager.tilFoejGameState("mainScreen", new mainScreen());
-    manager.tilFoejGameState("gamescreen", new GameScreen());
-    manager.skiftGameState("mainScreen");
+    manager.tilFoejGameState("gameScreen", new gameScreen());
+    manager.skiftGameState("mainScreen"); 
   
   
   
@@ -70,6 +71,8 @@ void draw() {
       }
     }
   }
+  
+  manager.draw();
 }
 
 void cardDraw() {
@@ -94,7 +97,8 @@ public void controlEvent(ControlEvent theEvent) {
 //controller with name colorA
 public void colorA() {
   println("a button event from colorA: ");
-  manager.skiftGameState("gamescreen");
+  println("heh");
+  manager.skiftGameState("gameScreen");
 }
 
 //function colorB will receive changes from

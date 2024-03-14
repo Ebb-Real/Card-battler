@@ -1,6 +1,4 @@
-class GameScreen extends GameState {
-  
-  //Tilpasses med controlP5
+class gameScreen extends GameState {
 
  // void skiftSkaerm(String s) {
   //  manager.skiftGameState(s);
@@ -8,6 +6,6 @@ class GameScreen extends GameState {
   
     void draw() {
     background(0, 255, 255);
-      println("a button event from colorA: ");
+      println("AHAHAHHAHAHAH ");
   }
 }
