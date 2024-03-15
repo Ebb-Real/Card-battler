@@ -4,8 +4,6 @@ GameStateManager manager;
 ControlP5 cp5;
 
 //integers and arraylists
-public int cardlength = 150;
-public int cardheight = 300;
 ArrayList<Card> deck = new ArrayList<Card>();
 
 //create hand object
@@ -16,32 +14,32 @@ Card claw, healingHands;
 
 void setup() { //<>//
     
-   //<>//
+   //<>// //<>//
     manager = new GameStateManager(); //<>//
-   //<>//
-    manager.tilFoejGameState("mainScreen", new MainScreen());
-    manager.tilFoejGameState("gameScreen", new GameScreen());
+   //<>// //<>//
+    manager.tilFoejGameState("mainScreen", new MainScreen()); //<>//
+    manager.tilFoejGameState("gameScreen", new GameScreen()); //<>//
     manager.skiftGameState("mainScreen"); //<>//
    //<>//
-   //<>//
-   //<>//
-  //card library //<>//
-  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
-  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
+   //<>// //<>//
+   //<>// //<>//
+  //card library //<>// //<>//
+  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build(); //<>//
+  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build(); //<>//
    //<>//
   //GUI //<>//
-  cp5 = new ControlP5(this); //<>//
-  cp5.addButton("colorA") //<>//
-    .setPosition(100, 100) //<>//
-    .setSize(200, 19) //<>//
-    ; //<>//
-
-  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")}; //<>//
+  cp5 = new ControlP5(this); //<>// //<>//
+  cp5.addButton("colorA") //<>// //<>//
+    .setPosition(100, 100) //<>// //<>//
+    .setSize(200, 19) //<>// //<>//
+    ; //<>// //<>//
+ //<>//
+  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")}; //<>// //<>//
   cp5.addButton("play") //<>//
-    .setPosition(140, 300) //<>//
-    .setImages(imgs) //<>//
-    .updateSize()
-    ;
+    .setPosition(140, 300) //<>// //<>//
+    .setImages(imgs) //<>// //<>//
+    .updateSize() //<>//
+    ; //<>//
     
     
   PImage[] imgs2 = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
@@ -59,6 +57,7 @@ void setup() { //<>//
 void draw() {
   background(0, 0, 255);
   manager.draw();
+  playerHand.draw();
 }
 
 void cardDraw() {
@@ -81,13 +80,13 @@ public void controlEvent(ControlEvent theEvent) {
 
 //function colorA will receive changes from
 //controller with name colorA
-public void colorA() { //<>//
+public void colorA() { //<>// //<>//
   println("a button event from colorA: ");
   println("heh");
   manager.skiftGameState("gameScreen");
 }
 
-//function colorB will receive changes from
+//function colorB will receive changes from //<>//
 //controller with name colorB //<>//
 public void colorB() {
   println("a button event from colorB: ");
