@@ -1,7 +1,13 @@
-class mainScreen extends GameState {
+class MainScreen extends GameState {
   
-  //Tilpasses med controlP5
-
+  void draw(){
+    
+    
+    
+  }
+  
+  
+  
   void skiftSkaerm(String s) {
     manager.skiftGameState(s);
   }

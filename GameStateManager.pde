@@ -1,4 +1,3 @@
-Boolean mainScreen;
 class GameStateManager {
   HashMap<String, GameState> gameStates;
   GameState currentGameState = null;

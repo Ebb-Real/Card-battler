@@ -1,11 +1,9 @@
-    import controlP5.*;
+import controlP5.*;
 GameStateManager manager;
 
 ControlP5 cp5;
 
 //integers and arraylists
-public int cardlength = 150;
-public int cardheight = 300;
 ArrayList<Card> deck = new ArrayList<Card>();
 
 //create hand object
@@ -63,6 +61,8 @@ void setup() {
 
 void draw() {
   background(0, 0, 255);
+  manager.draw();
+  playerHand.draw();
 }
 
 void cardDraw() {
@@ -87,7 +87,8 @@ public void controlEvent(ControlEvent theEvent) {
 //controller with name colorA
 public void colorA() {
   println("a button event from colorA: ");
-  manager.skiftGameState("gamescreen");
+  println("heh");
+  manager.skiftGameState("gameScreen");
 }
 
 //function colorB will receive changes from
