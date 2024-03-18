@@ -62,7 +62,7 @@ void setup() {
 void draw() {
   background(0, 0, 255);
   manager.draw();
-  playerHand.draw();
+
 }
 
 void cardDraw() {
