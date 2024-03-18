@@ -11,35 +11,38 @@ ArrayList<Card> deck = new ArrayList<Card>();
 //create hand object
 Hand playerHand = new Hand(10);
 
+//create enemy object
+ Enemy enemy=new Enemy();
+
 //cards
 Card claw, healingHands;
 
-void setup() { //<>//
+void setup() {
     
-   //<>//
-    manager = new GameStateManager(); //<>//
-   //<>//
+  
+    manager = new GameStateManager();
+  
     manager.tilFoejGameState("mainScreen", new mainScreen());
     manager.tilFoejGameState("gamescreen", new GameScreen());
-    manager.skiftGameState("mainScreen"); //<>//
-   //<>//
-   //<>//
-   //<>//
-  //card library //<>//
+    manager.skiftGameState("mainScreen");
+  
+  
+  
+  //card library
   claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
   healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
-   //<>//
-  //GUI //<>//
-  cp5 = new ControlP5(this); //<>//
-  cp5.addButton("colorA") //<>//
-    .setPosition(100, 100) //<>//
-    .setSize(200, 19) //<>//
-    ; //<>//
+  
+  //GUI
+  cp5 = new ControlP5(this);
+  cp5.addButton("colorA")
+    .setPosition(100, 100)
+    .setSize(200, 19)
+    ;
 
-  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")}; //<>//
-  cp5.addButton("play") //<>//
-    .setPosition(140, 300) //<>//
-    .setImages(imgs) //<>//
+  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
+  cp5.addButton("play")
+    .setPosition(140, 300)
+    .setImages(imgs)
     .updateSize()
     ;
     
@@ -52,6 +55,8 @@ void setup() { //<>//
     ;
 
   fullScreen();
+  deck.add(healingHands);
+  deck.add(claw);
   deck.add(claw);
   deck.add(healingHands);
 }
@@ -80,13 +85,13 @@ public void controlEvent(ControlEvent theEvent) {
 
 //function colorA will receive changes from
 //controller with name colorA
-public void colorA() { //<>//
+public void colorA() {
   println("a button event from colorA: ");
   manager.skiftGameState("gamescreen");
 }
 
 //function colorB will receive changes from
-//controller with name colorB //<>//
+//controller with name colorB
 public void colorB() {
   println("a button event from colorB: ");
 }
@@ -101,8 +106,10 @@ public void play() {
   drawn=true;
   }
 }
-
-public void Endturn() {
-  drawn=false;
-  println("a button event from Endturn: ");
+boolean playerturn=true; //<>//
+public void Endturn() { //<>//
+  playerturn=false; //<>//
+  enemy.enemyTurn(); //<>//
+  drawn=false; //<>//
+  println("a button event from Endturn: "); //<>//
 }
