@@ -1,9 +1,7 @@
 class MainScreen extends GameState {
   
   void draw(){
-    
-    
-    
+
   }
   
   
