@@ -9,10 +9,13 @@ ArrayList<Card> deck = new ArrayList<Card>();
 //create hand object
 Hand playerHand = new Hand(10);
 
+//create enemy object
+ Enemy enemy=new Enemy();
+
 //cards
 Card claw, healingHands;
 
-void setup() { //<>//
+void setup() {
     
    //<>// //<>//
     manager = new GameStateManager(); //<>//
@@ -50,6 +53,8 @@ void setup() { //<>//
     ;
 
   fullScreen();
+  deck.add(healingHands);
+  deck.add(claw);
   deck.add(claw);
   deck.add(healingHands);
 }
@@ -80,14 +85,14 @@ public void controlEvent(ControlEvent theEvent) {
 
 //function colorA will receive changes from
 //controller with name colorA
-public void colorA() { //<>// //<>//
+public void colorA() {
   println("a button event from colorA: ");
   println("heh");
   manager.skiftGameState("gameScreen");
 }
 
-//function colorB will receive changes from //<>//
-//controller with name colorB //<>//
+//function colorB will receive changes from
+//controller with name colorB
 public void colorB() {
   println("a button event from colorB: ");
 }
@@ -102,8 +107,10 @@ public void drawkort() {
   drawn=true;
   }
 }
-
-public void Endturn() {
-  drawn=false;
-  println("a button event from Endturn: ");
+boolean playerturn=true; //<>//
+public void Endturn() { //<>//
+  playerturn=false; //<>//
+  enemy.enemyTurn(); //<>//
+  drawn=false; //<>//
+  println("a button event from Endturn: "); //<>//
 }
