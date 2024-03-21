@@ -24,8 +24,6 @@ void setup() {
     manager.tilFoejGameState("gamescreen", new GameScreen());
     manager.skiftGameState("mainScreen");
   
-  
-  
   //card library
   claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
   healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();

@@ -23,7 +23,8 @@ class Hand {
       }
     }
     
-    /*for (int i=0; i<=handCards.size()-1; i++) {
+    /*
+    for (int i=0; i<=handCards.size()-1; i++) {
       handCards.get(i).posX = width/2;
       handCards.get(i).posY = height/2;
       handCards.get(i).draw();
