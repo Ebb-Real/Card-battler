@@ -81,7 +81,7 @@ public void controlEvent(ControlEvent theEvent) {
 //controller with name colorA
 public void colorA() {
   println("a button event from colorA: ");
-  println("heh"); //<>//
+  println("heh");
   manager.skiftGameState("gameScreen");
 }
 
