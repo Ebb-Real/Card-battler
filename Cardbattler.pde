@@ -10,41 +10,38 @@ ArrayList<Card> deck = new ArrayList<Card>();
 Hand playerHand = new Hand(10);
 
 //create enemy object
- Enemy enemy=new Enemy();
+Enemy enemy=new Enemy();
 
 //cards
 Card claw, healingHands;
 
 void setup() {
+
+  manager = new GameStateManager();
+
+  manager.tilFoejGameState("mainScreen", new MainScreen());
+  manager.tilFoejGameState("gameScreen", new GameScreen());
+  manager.skiftGameState("mainScreen");
+
+  //card library
+  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
+  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
+
+  //GUI
+  cp5 = new ControlP5(this);
+  cp5.addButton("colorA")
+    .setPosition(100, 100)
+    .setSize(200, 19)
+    ;
     
-   //<>// //<>//
-    manager = new GameStateManager(); //<>//
-   //<>// //<>//
-    manager.tilFoejGameState("mainScreen", new MainScreen()); //<>//
-    manager.tilFoejGameState("gameScreen", new GameScreen()); //<>//
-    manager.skiftGameState("mainScreen"); //<>//
-   //<>//
-   //<>// //<>//
-   //<>// //<>//
-  //card library //<>// //<>//
-  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build(); //<>//
-  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build(); //<>//
-   //<>//
-  //GUI //<>//
-  cp5 = new ControlP5(this); //<>// //<>//
-  cp5.addButton("colorA") //<>// //<>//
-    .setPosition(100, 100) //<>// //<>//
-    .setSize(200, 19) //<>// //<>//
-    ; //<>// //<>//
- //<>//
-  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")}; //<>// //<>//
-  cp5.addButton("drawKort") //<>//
-    .setPosition(140, 300) //<>// //<>//
-    .setImages(imgs) //<>// //<>//
-    .updateSize() //<>//
-    ; //<>//
-    
-    
+  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
+  cp5.addButton("drawKort")
+    .setPosition(140, 300)
+    .setImages(imgs)
+    .updateSize()
+    ;
+
+
   PImage[] imgs2 = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
   cp5.addButton("Endturn")
     .setPosition(600, 300)
@@ -62,15 +59,13 @@ void setup() {
 void draw() {
   background(0, 0, 255);
   manager.draw();
-
 }
 
 void cardDraw() {
   if (deck.size()>0) {
     playerHand.addCard(deck.get(0));
     deck.remove(0);
-  }
-  else {
+  } else {
     mill();
   }
 }
@@ -101,16 +96,16 @@ public void colorB() {
 //controller with name colorC
 boolean drawn=false;
 public void drawkort() {
-  if (drawn==false){
-  println("a button event from colorC: ");
-  cardDraw();
-  drawn=true;
+  if (drawn==false) {
+    println("a button event from colorC: ");
+    cardDraw();
+    drawn=true;
   }
 }
-boolean playerturn=true; //<>//
-public void Endturn() { //<>//
-  playerturn=false; //<>//
-  enemy.enemyTurn(); //<>//
-  drawn=false; //<>//
-  println("a button event from Endturn: "); //<>//
+boolean playerturn=true;
+public void Endturn() {
+  playerturn=false;
+  enemy.enemyTurn();
+  drawn=false;
+  println("a button event from Endturn: ");
 }
