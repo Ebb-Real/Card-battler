@@ -7,7 +7,7 @@ class BygCard implements builder {
   }
 
   BygCard setNavn(String n) {
-    CardBP.navn = n;
+    CardBP.name = n;
     return this;
   }
   

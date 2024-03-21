@@ -1,6 +1,6 @@
 //base for cards
 class Card {
-  String navn;
+  String name;
   int mana;
   boolean minion;
   int power;

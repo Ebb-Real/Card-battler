@@ -9,14 +9,15 @@ class Hand {
 
   void draw() {
     for (int i=0; i<=handCards.size()-1; i++) {
-      handCards.get(i).posX = width/2;
+      handCards.get(i).posX = width/2 - handCards.size() * i * 50;
       handCards.get(i).posY = height/2;
       handCards.get(i).draw();
+      println(handCards.get(i).name);
     }
   }
 
   void addCard(Card c) {
     handCards.add(c);
-    println(handCards.get(0).navn);
+    println(handCards.get(0).name);
   }
 }
