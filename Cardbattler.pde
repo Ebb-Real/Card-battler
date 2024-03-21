@@ -41,7 +41,6 @@ void setup() {
     .updateSize()
     ;
 
-
   PImage[] imgs2 = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
   cp5.addButton("Endturn")
     .setPosition(600, 300)
