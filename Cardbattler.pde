@@ -12,7 +12,7 @@ Hand playerHand = new Hand(10);
 //create enemy object
 Enemy enemy=new Enemy();
 
-//cards //<>//
+//cards
 Card claw, healingHands;
 
 void setup() {
@@ -74,13 +74,13 @@ void mill() {
 }
 
 public void controlEvent(ControlEvent theEvent) {
-  println(theEvent.getController().getName()); //<>//
+  println(theEvent.getController().getName());
 }
 
 //function colorA will receive changes from
 //controller with name colorA
 public void colorA() {
-  println("a button event from colorA: "); //<>//
+  println("a button event from colorA: ");
   println("heh"); //<>//
   manager.skiftGameState("gameScreen");
 }
