@@ -35,7 +35,7 @@ void setup() { //<>//
     ; //<>// //<>//
  //<>//
   PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")}; //<>// //<>//
-  cp5.addButton("play") //<>//
+  cp5.addButton("drawKort") //<>//
     .setPosition(140, 300) //<>// //<>//
     .setImages(imgs) //<>// //<>//
     .updateSize() //<>//
@@ -95,7 +95,7 @@ public void colorB() {
 //function colorC will receive changes from
 //controller with name colorC
 boolean drawn=false;
-public void play() {
+public void drawkort() {
   if (drawn==false){
   println("a button event from colorC: ");
   cardDraw();
