@@ -12,12 +12,11 @@ class Hand {
       handCards.get(i).posX = width/2 - handCards.size() * i * 50;
       handCards.get(i).posY = height/2;
       handCards.get(i).draw();
-      println(handCards.get(i).name);
     }
   }
 
   void addCard(Card c) {
     handCards.add(c);
-    println(handCards.get(0).name);
+    println(handCards.get(1).name); //WHY DOES THIS LINE MAKE IT WORK?!
   }
 }

@@ -53,8 +53,6 @@ void setup() { //<>//
     b2.hide();
 
   fullScreen();
-  deck.add(healingHands);
-  deck.add(claw);
   deck.add(claw);
   deck.add(healingHands);
 }
