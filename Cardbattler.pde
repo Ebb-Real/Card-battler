@@ -18,7 +18,10 @@ Mana playerMana = new Mana(10,1,1);
 Hand playerHand = new Hand(10);
 
 //create enemy object
-Enemy enemy= new Enemy(10);
+Enemy enemy= new Enemy(10,15,1,3,1,3,3,5);
+
+//create Health object
+Health playerHealth= new Health(10,10);
 
 //cards
 //Card claw, healingHands;
@@ -102,13 +105,13 @@ void deckEmpty() {
 }
 
 void handFull() { //<>//
-  println("Hand is full"); //<>//
+  println("Hand is full");
 }
  //<>//
 public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());
-}
-
+} //<>//
+ //<>//
 //function colorA will receive changes from
 //controller with name colorA //<>//
 public void colorA() { //<>//
@@ -116,6 +119,8 @@ public void colorA() { //<>//
   println("heh");
   gameDisplay = true;
   showButton();
+  gameStartup();
+
   manager.skiftGameState("gameScreen");
 }
 
@@ -154,28 +159,36 @@ public void Endturn() {
   playerMana.activeMana=playerMana.currentMana;
   
   println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana); //<>//
-  
   enemy.enemyTurn();
+  enemy.intent();
   drawn=false;
   println("a button event from Endturn: ");
-  
-  //TESTING
-  enemy.enemyHurt(1);
-   println(enemy.currentEnemyHealth);
+  println("health = " + playerHealth.currentHealth);
 }
 
+boolean grabbing=false;
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
-    if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2) {
+    if (grabbing=false){
+    while (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2 && grabbing==false) {
+      grabbing=true;
       playerHand.handCards.get(i).grabbed = true;
       playerHand.handCards.get(i).posX = mouseX;
       playerHand.handCards.get(i).posY = mouseY;
     }
-  }
+}  
+}
 }
 
 void mouseReleased() {
-  for (int i = 0; i < playerHand.handCards.size(); i++) {
+  for (int i = 0; i < playerHand.handCards.size(); i++) { //<>//
     playerHand.handCards.get(i).grabbed = false;
   }
+  grabbing=false;
+}
+
+
+void gameStartup(){
+  
+ enemy.intent();
 }
