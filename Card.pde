@@ -16,20 +16,22 @@ class Card {
   String cardPictureFile = "bruh2.png";
 
   Card() {
-    cardPicture = loadImage(cardPictureFile);
-    cardPicture.resize(cardLength - 10, cardHeight / 3);
   }
-  
+
   void draw() {
     rectMode(CENTER);
     imageMode(CENTER);
     rect(posX, posY, cardLength, cardHeight, 15);
     image(cardPicture, posX, posY - cardHeight/5);
-    
   }
   void Play() {
     playerMana.manaSpend(mana);
     enemy.enemyHurt(damage);
     playerHealth.playerHeal(heal);
+  }
+
+  void imageLoader() {
+    cardPicture = loadImage(cardPictureFile);
+    cardPicture.resize(cardLength - 10, cardHeight / 3);
   }
 }

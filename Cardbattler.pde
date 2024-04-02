@@ -46,7 +46,7 @@ void setup() {
     ;
   b1.hide();
 
-  PImage[] imgs2 = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
+  PImage[] imgs2 = {loadImage("End Turn.png"), loadImage("End Turn1.jpg"), loadImage("End Turn2.png")};
   b2 = cp5.addButton("Endturn")
     .setPosition(600, 300)
     .setImages(imgs2)
@@ -58,12 +58,7 @@ void setup() {
   fullScreen();
 
 
-  //deck
-  cardCreator.Create("claw");
-  cardCreator.Create("claw");
-  cardCreator.Create("healing hands");
-  cardCreator.Create("claw");
-  cardCreator.Create("healing hands");
+
 
 
   //mana setup
@@ -85,6 +80,7 @@ void cardDraw() {
     return;
   }
   playerHand.addCard(deck.get(0));
+  deck.get(0).imageLoader();
   deck.remove(0);
 }
 
@@ -173,6 +169,15 @@ void mouseReleased() {
 
 
 void gameStartup() {
-
+  
+  //deck
+  cardCreator.Create("claw");
+  cardCreator.Create("claw");
+  cardCreator.Create("healing hands");
+  cardCreator.Create("claw");
+  cardCreator.Create("healing hands");
+  
+  
+  
   enemy.intent();
 }
