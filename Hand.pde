@@ -7,7 +7,7 @@ class Hand {
     handLimit = handLimitInput;
   }
   
-  void draw() {
+  void update() {
     if (handCards.size() < handLimit) {
       handIsFull = false;
     }
