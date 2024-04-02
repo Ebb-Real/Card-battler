@@ -53,6 +53,11 @@ class BygCard implements builder {
     return this;
   }
   
+  BygCard setPictureFile(String cpf) {
+    CardBP.cardPictureFile = cpf;
+    return this;
+  }
+  
   Card build() {
     return CardBP;
   }

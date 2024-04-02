@@ -8,6 +8,7 @@ class GameScreen extends GameState {
   }
   
   void draw() {
+    imageMode(NORMAL);
     image(ancientClock, 0, 0);
     playerHand.update();
     
