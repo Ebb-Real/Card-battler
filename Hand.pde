@@ -29,4 +29,10 @@ class Hand {
       handCards.add(c);
     }
   }
+//  void handcontroller() {
+//  switch (keyPressed){
+//    case '1'
+//    break;
+//  }
+//}
 }

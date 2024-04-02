@@ -1,5 +1,9 @@
 class Enemy{
-  Enemy(){}
+  int currentEnemyHealth;
+  Enemy(int enemyStartingHealth){
+  currentEnemyHealth=enemyStartingHealth;
+  }
+  
 int attacknumber=1;
 void enemyTurn(){
  if (playerturn==false){ //<>//
@@ -21,5 +25,11 @@ void enemyTurn(){
    }
    println(attacknumber);
  }
+}
+void enemyHurt(int damage){
+  currentEnemyHealth=currentEnemyHealth-damage;
+  if (currentEnemyHealth<=0){
+    println("You win congratulations");
+  }
 }
 }

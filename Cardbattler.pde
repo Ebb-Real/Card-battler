@@ -14,31 +14,32 @@ Mana playerMana = new Mana(10,1,1);
 //create hand object
 Hand playerHand = new Hand(10); //<>// //<>//
 
-//create enemy object //<>// //<>//
-Enemy enemy=new Enemy(); //<>// //<>//
- //<>// //<>//
-//cards //<>// //<>// //<>// //<>//
-Card claw, healingHands; //<>// //<>//
- //<>// //<>//
-void setup() { //<>// //<>//
-  manager = new GameStateManager(); //<>// //<>//
- //<>// //<>//
-  manager.tilFoejGameState("mainScreen", new MainScreen()); //<>// //<>//
-  manager.tilFoejGameState("gameScreen", new GameScreen()); //<>// //<>//
-  manager.skiftGameState("mainScreen"); //<>// //<>//
-   //<>// //<>//
-  //card library //<>// //<>//
-  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build(); //<>// //<>//
-  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build(); //<>// //<>//
-   //<>// //<>//
-  //GUI //<>// //<>//
-  cp5 = new ControlP5(this); //<>// //<>//
-  cp5.addButton("colorA") //<>// //<>//
-    .setPosition(100, 100) //<>// //<>//
-    .setSize(200, 19) //<>// //<>//
-    ; //<>// //<>//
-   //<>// //<>//
-  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")}; //<>// //<>//
+//create enemy object
+Enemy enemy=new Enemy(10);
+
+//cards
+Card claw, healingHands;
+
+void setup() {
+
+  manager = new GameStateManager();
+
+  manager.tilFoejGameState("mainScreen", new MainScreen());
+  manager.tilFoejGameState("gameScreen", new GameScreen());
+  manager.skiftGameState("mainScreen");
+
+  //card library
+  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
+  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
+
+  //GUI
+  cp5 = new ControlP5(this);
+  cp5.addButton("colorA")
+    .setPosition(100, 100)
+    .setSize(200, 19)
+    ;
+    
+  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
   b1 = cp5.addButton("drawKort")
     .setPosition(140, 300)
     .setImages(imgs)
@@ -53,6 +54,7 @@ void setup() { //<>// //<>//
     .updateSize()
     ;
     b2.hide();
+
 
   fullScreen();
   
@@ -101,8 +103,8 @@ public void controlEvent(ControlEvent theEvent) {
 //function colorA will receive changes from
 //controller with name colorA
 public void colorA() {
-  println("a button event from colorA: "); //<>// //<>//
-  println("heh"); //<>// //<>//
+  println("a button event from colorA: ");
+  println("heh");
   gameDisplay = true;
   showButton();
   manager.skiftGameState("gameScreen");
@@ -139,7 +141,7 @@ public void Endturn() {
   
   //mana crystal increase
   playerMana.manaIncrease(playerMana.addedManaPerRound);
-  //Mana crystal refresh
+  //Mana crystal refresh/start of turn set mana
   playerMana.activeMana=playerMana.currentMana;
   
   println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana);
@@ -147,6 +149,11 @@ public void Endturn() {
   enemy.enemyTurn();
   drawn=false;
   println("a button event from Endturn: ");
+
+  
+  //TESTING
+  enemy.enemyHurt(1);
+   println(enemy.currentEnemyHealth);
 }
 
 void mouseDragged() {
