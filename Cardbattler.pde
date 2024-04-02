@@ -4,6 +4,7 @@ GameStateManager manager;
 ControlP5 cp5;
 controlP5.Button b1, b2;
 
+
 //integers and arraylists
 ArrayList<Card> deck = new ArrayList<Card>();
 boolean gameDisplay = false;
@@ -30,6 +31,7 @@ void setup() {
   manager.tilFoejGameState("mainScreen", new MainScreen());
   manager.tilFoejGameState("gameScreen", new GameScreen());
   manager.skiftGameState("mainScreen");
+  
 
   //GUI
   cp5 = new ControlP5(this);
@@ -46,7 +48,7 @@ void setup() {
     ;
   b1.hide();
 
-  PImage[] imgs2 = {loadImage("End Turn.png"), loadImage("End Turn1.jpg"), loadImage("End Turn2.png")};
+  PImage[] imgs2 = {loadImage("End Turn2.png"), loadImage("End Turn2.jpg"), loadImage("End Turn3.png")};
   b2 = cp5.addButton("Endturn")
     .setPosition(600, 300)
     .setImages(imgs2)
@@ -102,7 +104,7 @@ public void colorA() {
   println("a button event from colorA: ");
   println("heh");
   gameDisplay = true;
-  showButton();
+  showButton(); //<>//
   gameStartup();
 
   manager.skiftGameState("gameScreen");
@@ -169,6 +171,8 @@ void mouseReleased() {
 
 
 void gameStartup() {
+  //ui load
+playerHealth.load();  
   
   //deck
   cardCreator.Create("claw");
@@ -177,7 +181,7 @@ void gameStartup() {
   cardCreator.Create("claw");
   cardCreator.Create("healing hands");
   
-  
+   //<>//
   
   enemy.intent();
 }
