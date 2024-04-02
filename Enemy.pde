@@ -6,8 +6,8 @@ class Enemy{
   
 int attacknumber=1;
 void enemyTurn(){
- if (playerturn==false){ //<>//
-   println("balls"); //<>//
+ if (playerturn==false){
+   println("balls");
    attacknumber=int(random(10));
    switch(attacknumber){
      case (0):

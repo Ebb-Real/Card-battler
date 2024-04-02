@@ -12,7 +12,7 @@ boolean gameDisplay = false;
 Mana playerMana = new Mana(10,1,1);
 
 //create hand object
-Hand playerHand = new Hand(10); //<>// //<>//
+Hand playerHand = new Hand(10);
 
 //create enemy object
 Enemy enemy=new Enemy(10);
@@ -97,7 +97,7 @@ void handFull() {
 }
 
 public void controlEvent(ControlEvent theEvent) {
-  println(theEvent.getController().getName()); //<>// //<>//
+  println(theEvent.getController().getName());
 }
 
 //function colorA will receive changes from
@@ -157,11 +157,11 @@ public void Endturn() {
 }
 
 void mouseDragged() {
-  for (int i = 0; i <= playerHand.handCards.size() - 1; i++) {
+  for (int i = 0; i < playerHand.handCards.size(); i++) {
     if(mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardLength / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardLength / 2) {
       playerHand.handCards.get(i).grabbed = true;
       playerHand.handCards.get(i).posX = mouseX;
       playerHand.handCards.get(i).posY = mouseY;
-    }
   }
+}
 }
