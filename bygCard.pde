@@ -20,6 +20,11 @@ class BygCard implements builder {
     CardBP.minion = mi;
     return this;
   }
+  
+  BygCard setPictureFile(String cpf) {
+    CardBP.cardPictureFile = cpf;
+    return this;
+  }
 
   //Minion
   BygCard setHealth(int h) {
@@ -50,11 +55,6 @@ class BygCard implements builder {
 
   BygCard setPosY(float poy) {
     CardBP.posY = poy;
-    return this;
-  }
-  
-  BygCard setPictureFile(String cpf) {
-    CardBP.cardPictureFile = cpf;
     return this;
   }
   
