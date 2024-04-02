@@ -1,9 +1,8 @@
 class MainScreen extends GameState {
-  
-  void draw(){
-    
+
+  void draw() {
   }
-  
+
   void skiftSkaerm(String s) {
     manager.skiftGameState(s);
   }

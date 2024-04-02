@@ -1,5 +1,5 @@
 //the builder interface
-interface builder{
+interface builder {
   //generic data
   builder setNavn(String name);
   builder setMana(int mana);
@@ -11,7 +11,7 @@ interface builder{
   //if monster
   builder setPower(int p);
   builder setHealth(int h);
-  
+
   //if spell
   builder setDamage(int d);
   builder setHeal(int h);

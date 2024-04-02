@@ -28,8 +28,8 @@ class Card {
     
   }
   void Play() {
-  playerMana.manaSpend(this.mana);
-  enemy.enemyHurt(this.damage);
-  //playerHealth.
+    playerMana.manaSpend(mana);
+    enemy.enemyHurt(damage);
+    playerHealth.playerHeal(heal);
   }
 }

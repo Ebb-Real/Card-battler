@@ -12,31 +12,24 @@ boolean gameDisplay = false;
 CardCreator cardCreator = new CardCreator();
 
 //create Mana Object
-Mana playerMana = new Mana(10,1,1);
+Mana playerMana = new Mana(10, 1, 1);
 
 //create hand object
 Hand playerHand = new Hand(10);
 
 //create enemy object
-Enemy enemy= new Enemy(10,15,1,3,1,3,3,5);
+Enemy enemy= new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
 
 //create Health object
-Health playerHealth= new Health(10,10);
-
-//cards
-//Card claw, healingHands;
+Health playerHealth= new Health(10, 10);
 
 void setup() {
-  
+
   manager = new GameStateManager();
 
   manager.tilFoejGameState("mainScreen", new MainScreen());
   manager.tilFoejGameState("gameScreen", new GameScreen());
   manager.skiftGameState("mainScreen");
-
-  //card library
-  //claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
-  //healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
 
   //GUI
   cp5 = new ControlP5(this);
@@ -44,14 +37,14 @@ void setup() {
     .setPosition(100, 100)
     .setSize(200, 19)
     ;
-    
+
   PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
   b1 = cp5.addButton("drawKort")
     .setPosition(140, 300)
     .setImages(imgs)
     .updateSize()
     ;
-    b1.hide();
+  b1.hide();
 
   PImage[] imgs2 = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
   b2 = cp5.addButton("Endturn")
@@ -59,27 +52,22 @@ void setup() {
     .setImages(imgs2)
     .updateSize()
     ;
-    b2.hide();
+  b2.hide();
 
 
   fullScreen();
-  
-  
+
+
   //deck
   cardCreator.Create("claw");
   cardCreator.Create("claw");
   cardCreator.Create("healing hands");
   cardCreator.Create("claw");
   cardCreator.Create("healing hands");
-  //deck.add(claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build());
-  //deck.add(claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build());
-  //deck.add(healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build());
-  //deck.add(healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build());
-  //deck.add(healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build());
-  
+
+
   //mana setup
   playerMana.currentMana=playerMana.startingMana;
-  
 }
 
 void draw() {
@@ -95,26 +83,26 @@ void cardDraw() {
   if (playerHand.handIsFull) {
     handFull();
     return;
-  } //<>//
+  }
   playerHand.addCard(deck.get(0));
   deck.remove(0);
-} //<>//
+}
 
 void deckEmpty() {
-  println("Deck is empty"); //<>//
-} //<>//
+  println("Deck is empty");
+}
 
-void handFull() { //<>//
+void handFull() {
   println("Hand is full");
 }
- //<>//
+
 public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());
-} //<>//
- //<>//
+}
+
 //function colorA will receive changes from
-//controller with name colorA //<>//
-public void colorA() { //<>//
+//controller with name colorA
+public void colorA() {
   println("a button event from colorA: ");
   println("heh");
   gameDisplay = true;
@@ -141,7 +129,7 @@ public void drawKort() {
   }
 }
 
-  void showButton() {
+void showButton() {
 
   if (gameDisplay == true) {
     b1.show();
@@ -152,13 +140,13 @@ public void drawKort() {
 boolean playerturn=true;
 public void Endturn() {
   playerturn=false;
-  
+
   //mana crystal increase
   playerMana.manaIncrease(playerMana.addedManaPerRound);
   //Mana crystal refresh/start of turn set mana
   playerMana.activeMana=playerMana.currentMana;
-  
-  println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana); //<>//
+
+  println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana);
   enemy.enemyTurn();
   enemy.intent();
   drawn=false;
@@ -184,7 +172,7 @@ void mouseReleased() {
 }
 
 
-void gameStartup(){
-  
- enemy.intent();
+void gameStartup() {
+
+  enemy.intent();
 }

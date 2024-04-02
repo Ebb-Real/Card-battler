@@ -10,44 +10,44 @@ class BygCard implements builder {
     CardBP.name = n;
     return this;
   }
-  
+
   BygCard setMana(int m) {
     CardBP.mana = m;
     return this;
   }
-  
+
   BygCard Minion(boolean mi) {
     CardBP.minion = mi;
     return this;
   }
-  
+
   //Minion
   BygCard setHealth(int h) {
     CardBP.health = h;
     return this;
   }
-  
+
   BygCard setPower(int a) {
     CardBP.power = a;
     return this;
   }
-  
+
   //spell
   BygCard setDamage(int d) {
     CardBP.damage = d;
     return this;
   }
-  
+
   BygCard setHeal(int ha) {
     CardBP.heal = ha;
     return this;
   }
-  
+
   BygCard setPosX(float pox) {
     CardBP.posX = pox;
     return this;
   }
-  
+
   BygCard setPosY(float poy) {
     CardBP.posY = poy;
     return this;
