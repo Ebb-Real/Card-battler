@@ -1,4 +1,11 @@
 class GameScreen extends GameState {
+  //Background
+  PImage ancientClock;
+  
+  GameScreen() {
+    ancientClock = loadImage("ancient_clock.png");
+    ancientClock.resize(3000,1800);
+  }
   
   void draw() {
     image(ancientClock, 0, 0);

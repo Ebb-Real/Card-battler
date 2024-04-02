@@ -23,11 +23,7 @@ Enemy enemy= new Enemy(10);
 //cards
 //Card claw, healingHands;
 
-//Background
-PImage ancientClock;
-
 void setup() {
-  ancientClock = loadImage("ancient_clock.WEBP");
   
   manager = new GameStateManager();
 
@@ -95,18 +91,18 @@ void cardDraw() {
   }
   if (playerHand.handIsFull) {
     handFull();
-    return; //<>//
+    return;
   }
   playerHand.addCard(deck.get(0));
   deck.remove(0);
+} //<>//
+
+void deckEmpty() {
+  println("Deck is empty");
 }
 
-void deckEmpty() { //<>//
-  println("Deck is empty"); //<>//
-}
-
-void handFull() {
-  println("Hand is full");
+void handFull() { //<>//
+  println("Hand is full"); //<>//
 }
  //<>//
 public void controlEvent(ControlEvent theEvent) {
