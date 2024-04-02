@@ -8,6 +8,9 @@ controlP5.Button b1, b2;
 ArrayList<Card> deck = new ArrayList<Card>();
 boolean gameDisplay = false;
 
+//create Mana Object
+Mana playerMana = new Mana(10,1,1);
+
 //create hand object
 Hand playerHand = new Hand(10);
 
@@ -53,18 +56,17 @@ void setup() { //<>//
     b2.hide();
 
   fullScreen();
+  
+  
+  //deck
   deck.add(claw);
   deck.add(healingHands);
   deck.add(claw);
   deck.add(healingHands);
-  deck.add(claw);
-  deck.add(healingHands);
-  deck.add(claw);
-  deck.add(healingHands);
-  deck.add(claw);
-  deck.add(healingHands);
-  deck.add(claw);
-  deck.add(healingHands);
+  
+  //mana setup
+  playerMana.currentMana=playerMana.startingMana;
+  
 }
 
 void draw() {
@@ -136,6 +138,14 @@ public void drawKort() {
 boolean playerturn=true;
 public void Endturn() {
   playerturn=false;
+  
+  //mana crystal increase
+  playerMana.manaIncrease(playerMana.addedManaPerRound);
+  //Mana crystal refresh
+  playerMana.activeMana=playerMana.currentMana;
+  
+  println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana);
+  
   enemy.enemyTurn();
   drawn=false;
   println("a button event from Endturn: ");
