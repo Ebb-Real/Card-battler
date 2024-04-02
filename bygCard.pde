@@ -15,6 +15,7 @@ class BygCard implements builder {
     CardBP.mana = m;
     return this;
   }
+  
   BygCard Minion(boolean mi) {
     CardBP.minion = mi;
     return this;
