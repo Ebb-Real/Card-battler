@@ -14,31 +14,31 @@ Mana playerMana = new Mana(10,1,1);
 //create hand object
 Hand playerHand = new Hand(10); //<>//
 
-//create enemy object //<>//
-Enemy enemy=new Enemy(10); //<>//
- //<>//
-//cards //<>// //<>//
-Card claw, healingHands; //<>//
- //<>//
-void setup() { //<>//
- //<>//
-  manager = new GameStateManager(); //<>//
- //<>//
-  manager.tilFoejGameState("mainScreen", new MainScreen()); //<>//
-  manager.tilFoejGameState("gameScreen", new GameScreen()); //<>//
-  manager.skiftGameState("mainScreen"); //<>//
- //<>//
-  //card library //<>//
-  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build(); //<>//
-  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build(); //<>//
- //<>//
-  //GUI //<>//
-  cp5 = new ControlP5(this); //<>//
-  cp5.addButton("colorA") //<>//
-    .setPosition(100, 100) //<>//
-    .setSize(200, 19) //<>//
-    ; //<>//
-     //<>//
+//create enemy object
+Enemy enemy=new Enemy(10);
+
+//cards //<>//
+Card claw, healingHands;
+
+void setup() {
+
+  manager = new GameStateManager();
+
+  manager.tilFoejGameState("mainScreen", new MainScreen());
+  manager.tilFoejGameState("gameScreen", new GameScreen());
+  manager.skiftGameState("mainScreen");
+
+  //card library
+  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
+  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
+
+  //GUI
+  cp5 = new ControlP5(this);
+  cp5.addButton("colorA")
+    .setPosition(100, 100)
+    .setSize(200, 19)
+    ;
+    
   PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
   b1 = cp5.addButton("drawKort")
     .setPosition(140, 300)
@@ -156,9 +156,11 @@ public void Endturn() {
    println(enemy.currentEnemyHealth);
 }
 
+boolean grabbing = false;
+
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
-    if(mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2) {
+    if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2) {
       playerHand.handCards.get(i).grabbed = true;
       playerHand.handCards.get(i).posX = mouseX;
       playerHand.handCards.get(i).posY = mouseY;
