@@ -17,4 +17,9 @@ class Card {
     rectMode(CENTER);
     rect(posX, posY, cardLength, cardHeight, 15);
   }
+  void Play() {
+  playerMana.manaSpend(this.mana);
+  enemy.enemyHurt(this.damage);
+  //playerHealth.
+  }
 }

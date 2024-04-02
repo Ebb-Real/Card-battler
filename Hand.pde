@@ -22,10 +22,8 @@ class Hand {
         if (handCards.size()>=4){
         println(handCards.get(2).posX + " " + handCards.get(2).posX);
         }
-        println("balls2");
       }
       else{
-      println("hehe2");
       }
     }
   }
