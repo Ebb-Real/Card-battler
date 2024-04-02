@@ -1,4 +1,4 @@
-//base for cards
+//base for cards //<>// //<>// //<>//
 class Card {
   String name;
   String description;
@@ -36,6 +36,8 @@ class Card {
     text(name, posX, posY - cardHeight/2.4);
     textSize(15);
     text(description, posX, posY + cardHeight/30);
+    textSize(15);
+    text(Integer.toString(mana),posX+cardLength/2-10,posY-cardHeight/2+10);
     pop();
   }
   void Play() {
