@@ -1,7 +1,7 @@
 class GameScreen extends GameState {
   
   void draw() {
-    background(0, 255, 255);
+    image(ancientClock, 0, 0);
     playerHand.update();
     
     for (int i = 0; i <= playerHand.handCards.size() - 1; i++) {
