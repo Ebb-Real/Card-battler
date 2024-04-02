@@ -15,8 +15,12 @@ class Card {
   boolean grabbed = false;
   PImage cardPicture;
   String cardPictureFile = "bruh2.png";
-
+  
+  PImage manaIcon;
+  
   Card() {
+    manaIcon = loadImage("manacrystal.png");
+    
   }
 
   void draw() {
