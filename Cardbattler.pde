@@ -8,6 +8,9 @@ controlP5.Button b1, b2;
 ArrayList<Card> deck = new ArrayList<Card>();
 boolean gameDisplay = false;
 
+//create CardCreator object
+CardCreator cardCreator = new CardCreator();
+
 //create Mana Object
 Mana playerMana = new Mana(10,1,1);
 
@@ -15,10 +18,10 @@ Mana playerMana = new Mana(10,1,1);
 Hand playerHand = new Hand(10); //<>//
 
 //create enemy object
-Enemy enemy=new Enemy(10);
+Enemy enemy= new Enemy(10);
 
-//cards //<>//
-Card claw, healingHands;
+//cards
+//Card claw, healingHands;
 
 void setup() {
 
@@ -29,8 +32,8 @@ void setup() {
   manager.skiftGameState("mainScreen");
 
   //card library
-  claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
-  healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
+  //claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build();
+  //healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build();
 
   //GUI
   cp5 = new ControlP5(this);
@@ -60,10 +63,16 @@ void setup() {
   
   
   //deck
-  deck.add(claw);
-  deck.add(healingHands);
-  deck.add(claw);
-  deck.add(healingHands);
+  cardCreator.Create("claw");
+  cardCreator.Create("claw");
+  cardCreator.Create("healing hands");
+  cardCreator.Create("claw");
+  cardCreator.Create("healing hands");
+  //deck.add(claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build());
+  //deck.add(claw = new BygCard().setNavn("Claw").setMana(3).setDamage(2).build());
+  //deck.add(healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build());
+  //deck.add(healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build());
+  //deck.add(healingHands = new BygCard().setNavn("Healing Hands").setMana(2).setHeal(1).build());
   
   //mana setup
   playerMana.currentMana=playerMana.startingMana;
@@ -144,7 +153,7 @@ public void Endturn() {
   //Mana crystal refresh/start of turn set mana
   playerMana.activeMana=playerMana.currentMana;
   
-  println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana);
+  println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana); //<>//
   
   enemy.enemyTurn();
   drawn=false;
