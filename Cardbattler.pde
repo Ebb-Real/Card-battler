@@ -57,6 +57,14 @@ void setup() { //<>//
   deck.add(healingHands);
   deck.add(claw);
   deck.add(healingHands);
+  deck.add(claw);
+  deck.add(healingHands);
+  deck.add(claw);
+  deck.add(healingHands);
+  deck.add(claw);
+  deck.add(healingHands);
+  deck.add(claw);
+  deck.add(healingHands);
 }
 
 void draw() {
@@ -65,16 +73,24 @@ void draw() {
 }
 
 void cardDraw() {
-  if (deck.size()>0) {
-    playerHand.addCard(deck.get(0));
-    deck.remove(0);
-  } else {
-    mill();
+  if (deck.size()<=0) {
+    deckEmpty();
+    return;
   }
+  if (playerHand.handIsFull) {
+    handFull();
+    return;
+  }
+  playerHand.addCard(deck.get(0));
+  deck.remove(0);
 }
 
-void mill() {
-  println("bruh");
+void deckEmpty() {
+  println("Deck is empty");
+}
+
+void handFull() {
+  println("Hand is full");
 }
 
 public void controlEvent(ControlEvent theEvent) {
