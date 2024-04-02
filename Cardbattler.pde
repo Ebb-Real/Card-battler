@@ -97,7 +97,7 @@ void handFull() {
 public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());
 }
-
+ //<>//
 //function colorA will receive changes from
 //controller with name colorA
 public void colorA() {

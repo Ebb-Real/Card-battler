@@ -1,6 +1,7 @@
 //base for cards
 class Card {
   String name;
+  String description;
   int mana;
   boolean minion;
   int power;
@@ -21,8 +22,17 @@ class Card {
   void draw() {
     rectMode(CENTER);
     imageMode(CENTER);
+    textAlign(CENTER);
     rect(posX, posY, cardLength, cardHeight, 15);
+    push();
+    fill(0);
+    rect(posX, posY - cardHeight/5, cardLength - 20, cardHeight / 3);
     image(cardPicture, posX, posY - cardHeight/5);
+    textSize(20);
+    text(name, posX, posY - cardHeight/2.4);
+    textSize(15);
+    text(description, posX, posY + cardHeight/30);
+    pop();
   }
   void Play() {
     playerMana.manaSpend(mana);
@@ -32,6 +42,6 @@ class Card {
 
   void imageLoader() {
     cardPicture = loadImage(cardPictureFile);
-    cardPicture.resize(cardLength - 10, cardHeight / 3);
+    cardPicture.resize(cardLength - 20, cardHeight / 3);
   }
 }

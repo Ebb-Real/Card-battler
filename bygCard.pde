@@ -10,6 +10,11 @@ class BygCard implements builder {
     CardBP.name = n;
     return this;
   }
+  
+  BygCard setDescription(String des) {
+    CardBP.description = des;
+    return this;
+  }
 
   BygCard setMana(int m) {
     CardBP.mana = m;
