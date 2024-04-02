@@ -2,11 +2,11 @@ class Hand {
   int handLimit;
   boolean handIsFull = false;
   ArrayList<Card> handCards = new ArrayList<Card>();
-
+  
   Hand(int handLimitInput) {
     handLimit = handLimitInput;
   }
-
+  
   void draw() {
     if (handCards.size() < handLimit) {
       handIsFull = false;
@@ -21,7 +21,7 @@ class Hand {
       handCards.get(i).draw();
     }
   }
-
+  
   void addCard(Card c) {
     if(!handIsFull) {
       handCards.add(c);

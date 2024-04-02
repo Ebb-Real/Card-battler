@@ -17,8 +17,7 @@ Enemy enemy=new Enemy(); //<>//
 //cards //<>//
 Card claw, healingHands; //<>//
  //<>//
-void setup() { //<>//
- //<>//
+void setup() { //<>// //<>//
   manager = new GameStateManager(); //<>//
  //<>//
   manager.tilFoejGameState("mainScreen", new MainScreen()); //<>//
@@ -121,7 +120,6 @@ public void drawKort() {
     println("a button event from colorC: ");
     cardDraw();
     drawn=true;
-
   }
 }
 
