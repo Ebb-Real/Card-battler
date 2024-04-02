@@ -1,4 +1,4 @@
-//base for cards //<>// //<>// //<>//
+//base for cards //<>// //<>//
 class Card {
   String name;
   String description;

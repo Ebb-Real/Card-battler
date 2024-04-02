@@ -26,8 +26,7 @@ class Health {
    //<>//
   void ui() {
     for (int i=0; i<currentHealth; i++) {
-  
-      image(heart,width/2-(heart.width*currentHealth)/2+i*heart.width,0);
+      image(heart,width/2-(heart.width*currentHealth)/2+i*heart.width,height-heart.height);
     }
   }
 

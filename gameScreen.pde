@@ -9,8 +9,9 @@ class GameScreen extends GameState {
   void draw() {
     imageMode(NORMAL);
     image(ancientClock, 0, 0);
-    playerHand.update();
-    playerHealth.ui();
+    playerHand.update(); //<>//
+    playerHealth.ui(); //<>//
+    enemy.enemyUI(); //<>//
 
     for (int i = 0; i <= playerHand.handCards.size() - 1; i++) {
       playerHand.handCards.get(i).draw();

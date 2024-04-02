@@ -173,6 +173,7 @@ void mouseReleased() {
 void gameStartup() {
   //ui load
 playerHealth.load();  
+enemy.enemyLoad();
   
   //deck
   cardCreator.Create("claw");
@@ -180,7 +181,7 @@ playerHealth.load();
   cardCreator.Create("healing hands");
   cardCreator.Create("claw");
   cardCreator.Create("healing hands");
-  
+   //<>//
    //<>//
   
   enemy.intent();
