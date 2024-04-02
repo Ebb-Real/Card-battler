@@ -55,6 +55,8 @@ void setup() { //<>//
   fullScreen();
   deck.add(claw);
   deck.add(healingHands);
+  deck.add(claw);
+  deck.add(healingHands);
 }
 
 void draw() {
