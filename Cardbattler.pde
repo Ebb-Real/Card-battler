@@ -46,7 +46,7 @@ void setup() {
     ;
   b1.hide();
 
-  PImage[] imgs2 = {loadImage("End Turn.png"), loadImage("End Turn1.jpg"), loadImage("End Turn2.png")};
+  PImage[] imgs2 = {loadImage("End Turn3.png"), loadImage("End Turn1.jpg"), loadImage("End Turn2.png")};
   b2 = cp5.addButton("Endturn")
     .setPosition(600, 300)
     .setImages(imgs2)
@@ -95,14 +95,14 @@ void handFull() {
 public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());
 }
-
+ //<>//
 //function colorA will receive changes from
 //controller with name colorA
 public void colorA() {
   println("a button event from colorA: ");
   println("heh");
-  gameDisplay = true;
-  showButton();
+  gameDisplay = true; //<>//
+  showButton(); //<>//
   gameStartup();
 
   manager.skiftGameState("gameScreen");

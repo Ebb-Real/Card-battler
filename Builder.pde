@@ -2,6 +2,7 @@
 interface builder {
   //generic data
   builder setNavn(String name);
+  builder setDescription(String description);
   builder setMana(int mana);
   builder Minion(boolean minion);
   builder setPosX(float setPosX);
