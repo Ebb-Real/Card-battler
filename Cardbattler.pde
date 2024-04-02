@@ -1,4 +1,5 @@
 import controlP5.*;
+import java.util.Collections;
 GameStateManager manager;
 
 ControlP5 cp5;
@@ -16,13 +17,14 @@ CardCreator cardCreator = new CardCreator();
 Mana playerMana = new Mana(10, 1, 1);
 
 //create hand object
-Hand playerHand = new Hand(10);
+Hand playerHand = new Hand(10,3);
 
 //create enemy object
 Enemy enemy= new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
 
 //create Health object
 Health playerHealth= new Health(10, 10);
+
 
 void setup() {
 
@@ -171,18 +173,22 @@ void mouseReleased() {
 
 
 void gameStartup() {
+  
+    //deck
+  cardCreator.Create("claw");
+  cardCreator.Create("claw");
+  cardCreator.Create("healing hands");
+  cardCreator.Create("claw");
+  cardCreator.Create("healing hands");
+  Collections.shuffle(deck);
+   //<>//
+  
   //ui load
 playerHealth.load();  
 enemy.enemyLoad();
+playerHand.load();
   
-  //deck
-  cardCreator.Create("claw");
-  cardCreator.Create("claw");
-  cardCreator.Create("healing hands");
-  cardCreator.Create("claw");
-  cardCreator.Create("healing hands");
-   //<>//
-   //<>//
+
   
   enemy.intent();
 }

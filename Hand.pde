@@ -1,10 +1,12 @@
 class Hand {
   int handLimit;
+  int startingHandsize;
   boolean handIsFull = false;
   ArrayList<Card> handCards = new ArrayList<Card>();
 
-  Hand(int handLimitInput) {
+  Hand(int handLimitInput,int startingHandsizeInput) {
     handLimit = handLimitInput;
+    startingHandsize=startingHandsizeInput;
   }
 
   void update() {
@@ -30,5 +32,13 @@ class Hand {
     if (!handIsFull) {
       handCards.add(c);
     }
+  }
+  void load(){
+  for (int i=0; i<startingHandsize;i++){
+  deck.get(0).imageLoader();
+  addCard(deck.get(0));
+  deck.remove(0);
+  }
+  
   }
 }
