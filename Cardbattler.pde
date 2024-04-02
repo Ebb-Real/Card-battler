@@ -95,14 +95,14 @@ void cardDraw() {
   if (playerHand.handIsFull) {
     handFull();
     return;
-  }
+  } //<>//
   playerHand.addCard(deck.get(0));
   deck.remove(0);
 } //<>//
 
 void deckEmpty() {
-  println("Deck is empty");
-}
+  println("Deck is empty"); //<>//
+} //<>//
 
 void handFull() { //<>//
   println("Hand is full");
@@ -169,22 +169,18 @@ public void Endturn() {
 boolean grabbing=false;
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
-    if (grabbing=false){
-    while (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2 && grabbing==false) {
-      grabbing=true;
+    if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2 && grabbing==false) {
       playerHand.handCards.get(i).grabbed = true;
       playerHand.handCards.get(i).posX = mouseX;
       playerHand.handCards.get(i).posY = mouseY;
     }
-}  
-}
+  }
 }
 
 void mouseReleased() {
-  for (int i = 0; i < playerHand.handCards.size(); i++) { //<>//
+  for (int i = 0; i < playerHand.handCards.size(); i++) {
     playerHand.handCards.get(i).grabbed = false;
   }
-  grabbing=false;
 }
 
 
