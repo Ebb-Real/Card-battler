@@ -12,12 +12,12 @@ boolean gameDisplay = false;
 Mana playerMana = new Mana(10,1,1);
 
 //create hand object
-Hand playerHand = new Hand(10); //<>//
+Hand playerHand = new Hand(10);
 
 //create enemy object
 Enemy enemy=new Enemy(10);
 
-//cards //<>//
+//cards
 Card claw, healingHands;
 
 void setup() {
@@ -149,14 +149,11 @@ public void Endturn() {
   enemy.enemyTurn();
   drawn=false;
   println("a button event from Endturn: ");
-
   
   //TESTING
   enemy.enemyHurt(1);
    println(enemy.currentEnemyHealth);
 }
-
-boolean grabbing = false;
 
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
@@ -165,5 +162,11 @@ void mouseDragged() {
       playerHand.handCards.get(i).posX = mouseX;
       playerHand.handCards.get(i).posY = mouseY;
     }
+  }
+}
+
+void mouseReleased() {
+  for (int i = 0; i < playerHand.handCards.size(); i++) {
+    playerHand.handCards.get(i).grabbed = false;
   }
 }
