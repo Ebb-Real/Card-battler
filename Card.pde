@@ -11,6 +11,7 @@ class Card {
   float posY;
   int cardLength = 150;
   int cardHeight = 225;
+  boolean grabbed = false;
 
   void draw() {
     rectMode(CENTER);
