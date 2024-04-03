@@ -32,6 +32,7 @@ void setup() {
 
   manager.tilFoejGameState("mainScreen", new MainScreen());
   manager.tilFoejGameState("gameScreen", new GameScreen());
+  manager.tilFoejGameState("gameOverScreen", new GameOverScreen());
   manager.skiftGameState("mainScreen");
 
 

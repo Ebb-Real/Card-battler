@@ -19,8 +19,8 @@ class Health { //<>// //<>// //<>// //<>// //<>// //<>// //<>//
 
   void playerHurt(int damageAmmount) {
     currentHealth=currentHealth-damageAmmount;
-    if (currentHealth<0) {
-      println("you lose");
+    if (currentHealth<=0) {
+        manager.skiftGameState("gameOverScreen");
     }
   }
 

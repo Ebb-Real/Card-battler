@@ -3,7 +3,7 @@ class GameScreen extends GameState {
 
   GameScreen() {
     ancientClock = loadImage("ancient_clock.png");
-    ancientClock.resize(3000, 1800);
+    ancientClock.resize(width, height);
   }
 
   void draw() {
