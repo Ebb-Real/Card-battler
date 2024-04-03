@@ -1,4 +1,4 @@
-import controlP5.*; //<>// //<>// //<>//
+import controlP5.*;
 import java.util.Collections;
 GameStateManager manager;
 
@@ -33,6 +33,7 @@ void setup() {
   manager.tilFoejGameState("mainScreen", new MainScreen());
   manager.tilFoejGameState("gameScreen", new GameScreen());
   manager.tilFoejGameState("gameOverScreen", new GameOverScreen());
+    manager.tilFoejGameState("winScreen", new WinScreen());
   manager.skiftGameState("mainScreen");
 
 

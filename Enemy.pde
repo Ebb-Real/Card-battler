@@ -1,4 +1,4 @@
-class Enemy { //<>//
+class Enemy {
   int currentEnemyHealth;
   int enemyMaxHealth;
   int attackMinimum;
@@ -82,7 +82,7 @@ class Enemy { //<>//
   void enemyHurt(int damage) {
     currentEnemyHealth=currentEnemyHealth-damage;
     if (currentEnemyHealth<=0) {
-      println("You win congratulations");
+      manager.skiftGameState("winScreen");
     }
   }
 

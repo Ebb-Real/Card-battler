@@ -1,4 +1,4 @@
-class Health { //<>// //<>// //<>// //<>// //<>// //<>// //<>//
+class Health {
   int maxHealth;
   int currentHealth;
   PImage heart;
