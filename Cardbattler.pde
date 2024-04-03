@@ -190,6 +190,6 @@ playerHand.load();
 playerMana.load();
   
 
-  
+  playerMana.activeMana=playerMana.currentMana;
   enemy.intent();
 }
