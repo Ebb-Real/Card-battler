@@ -8,7 +8,7 @@ interface builder {
   builder setPosX(float setPosX);
   builder setPosY(float setPosY);
   builder setPictureFile(String cardPictureFile);
-  
+
   //if monster
   builder setPower(int p);
   builder setHealth(int h);

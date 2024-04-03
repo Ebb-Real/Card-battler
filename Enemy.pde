@@ -1,4 +1,4 @@
-class Enemy {
+class Enemy { //<>//
   int currentEnemyHealth;
   int enemyMaxHealth;
   int attackMinimum;
@@ -8,7 +8,7 @@ class Enemy {
   int healMinimum;
   int healMaximum;
   PImage enemyHeart;
-  PImage attackIntent,healIntent,missIntent,critIntent,currentIntent;
+  PImage attackIntent, healIntent, missIntent, critIntent, currentIntent;
   Enemy(int enemyStartingHealth, int enemyMaxHealthInput, int attackMinimumInput, int attackMaximumInput, int healMinimumInput, int healMaximumInput, int critMinimumInput, int critMaximumInput) {
     currentEnemyHealth=enemyStartingHealth;
     enemyMaxHealth=enemyMaxHealthInput;
@@ -86,37 +86,37 @@ class Enemy {
     }
   }
 
-  void enemyAttack (int damage) { 
-    playerHealth.playerHurt(damage); 
-  } //<>//
+  void enemyAttack (int damage) {
+    playerHealth.playerHurt(damage);
+  }
 
-  void enemyHeal(int healingAmmount) { 
+  void enemyHeal(int healingAmmount) {
     currentEnemyHealth=currentEnemyHealth+healingAmmount;
-    if(currentEnemyHealth>enemyMaxHealth){
+    if (currentEnemyHealth>enemyMaxHealth) {
       currentEnemyHealth=enemyMaxHealth;
     }
   }
-  
-  void enemyUI(){
-      for (int i=0; i<currentEnemyHealth; i++) {
-      image(enemyHeart,width/2-(enemyHeart.width*currentEnemyHealth)/2+i*enemyHeart.width,0);
+
+  void enemyUI() {
+    for (int i=0; i<currentEnemyHealth; i++) {
+      image(enemyHeart, width/2-(enemyHeart.width*currentEnemyHealth)/2+i*enemyHeart.width, 0);
     }
-    
-    image(currentIntent,width/4*3,height/2);
+
+    image(currentIntent, width/4*3, height/2);
     textSize(height/7);
     text(Integer.toString(power), width/4*3+currentIntent.width/2, height/2+currentIntent.height/2);
   }
-  
-  void enemyLoad(){
-  enemyHeart = loadImage("Enemy Heart.png");
-  enemyHeart.resize(width/20,width/20);
-  attackIntent = loadImage("Attack intent.png");
-  healIntent = loadImage("Heal intent.png");
-  missIntent = loadImage("Miss intent.png");
-  critIntent = loadImage("Crit intent.png");
-  attackIntent.resize(width/5,width/5);
-  healIntent.resize(width/5,width/5);
-  missIntent.resize(width/5,width/5);
-  critIntent.resize(width/5,width/5);
+
+  void enemyLoad() {
+    enemyHeart = loadImage("Enemy Heart.png");
+    enemyHeart.resize(width/20, width/20);
+    attackIntent = loadImage("Attack intent.png");
+    healIntent = loadImage("Heal intent.png");
+    missIntent = loadImage("Miss intent.png");
+    critIntent = loadImage("Crit intent.png");
+    attackIntent.resize(width/5, width/5);
+    healIntent.resize(width/5, width/5);
+    missIntent.resize(width/5, width/5);
+    critIntent.resize(width/5, width/5);
   }
 }

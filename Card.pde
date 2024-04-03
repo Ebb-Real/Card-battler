@@ -40,8 +40,7 @@ class Card {
     fill(0);
     textSize(20);
     text(description, posX, posY + cardHeight/30);
-    pop();    
-    
+    pop();
   }
   void Play() {
     playerMana.manaSpend(mana);

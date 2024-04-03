@@ -1,4 +1,4 @@
-import controlP5.*;
+import controlP5.*; //<>// //<>// //<>//
 import java.util.Collections;
 GameStateManager manager;
 
@@ -17,7 +17,7 @@ CardCreator cardCreator = new CardCreator();
 Mana playerMana = new Mana(10, 1, 1);
 
 //create hand object
-Hand playerHand = new Hand(10,3);
+Hand playerHand = new Hand(10, 3);
 
 //create enemy object
 Enemy enemy= new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
@@ -33,7 +33,7 @@ void setup() {
   manager.tilFoejGameState("mainScreen", new MainScreen());
   manager.tilFoejGameState("gameScreen", new GameScreen());
   manager.skiftGameState("mainScreen");
-  
+
 
   //GUI
   cp5 = new ControlP5(this);
@@ -50,7 +50,7 @@ void setup() {
     ;
   b1.hide();
 
-  PImage[] imgs2 = {loadImage("End Turn2.png"), loadImage("End Turn2.jpg"), loadImage("End Turn3.png")};
+  PImage[] imgs2 = {loadImage("End Turn1.png"), loadImage("End Turn2.png"), loadImage("End Turn3.png")};
   b2 = cp5.addButton("Endturn")
     .setPosition(600, 300)
     .setImages(imgs2)
@@ -99,14 +99,13 @@ void handFull() {
 public void controlEvent(ControlEvent theEvent) {
   println(theEvent.getController().getName());
 }
- //<>//
+
 //function colorA will receive changes from
 //controller with name colorA
 public void colorA() {
   println("a button event from colorA: ");
-  println("heh");
   gameDisplay = true;
-  showButton(); //<>//
+  showButton();
   gameStartup();
 
   manager.skiftGameState("gameScreen");
@@ -146,7 +145,6 @@ public void Endturn() {
   //Mana crystal refresh/start of turn set mana
   playerMana.activeMana=playerMana.currentMana;
 
-  println("MANA STUFF DONT LOOK YOU WEIRDO " + playerMana.currentMana);
   enemy.enemyTurn();
   enemy.intent();
   drawn=false;
@@ -173,22 +171,22 @@ void mouseReleased() {
 
 
 void gameStartup() {
-  
-    //deck
+
+  //deck
   cardCreator.Create("claw");
   cardCreator.Create("claw");
   cardCreator.Create("healing hands");
   cardCreator.Create("claw");
   cardCreator.Create("healing hands");
   Collections.shuffle(deck);
-   //<>//
-  
+
+
   //ui load
-playerHealth.load();  
-enemy.enemyLoad();
-playerHand.load();
-playerMana.load();
-  
+  playerHealth.load();
+  enemy.enemyLoad();
+  playerHand.load();
+  playerMana.load();
+
 
   playerMana.activeMana=playerMana.currentMana;
   enemy.intent();

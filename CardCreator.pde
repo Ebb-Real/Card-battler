@@ -1,7 +1,6 @@
 class CardCreator {
   Card claw, healingHands;
   CardCreator() {
-    
   }
 
   void Create(String input) {

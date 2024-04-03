@@ -4,7 +4,7 @@ class Hand {
   boolean handIsFull = false;
   ArrayList<Card> handCards = new ArrayList<Card>();
 
-  Hand(int handLimitInput,int startingHandsizeInput) {
+  Hand(int handLimitInput, int startingHandsizeInput) {
     handLimit = handLimitInput;
     startingHandsize=startingHandsizeInput;
   }
@@ -20,10 +20,6 @@ class Hand {
       if (!handCards.get(i).grabbed) {
         handCards.get(i).posX = width/2 - handCards.get(i).cardLength * handCards.size()/2 + i * handCards.get(i).cardLength+handCards.get(i).cardLength/2;
         handCards.get(i).posY = height/1.25;
-        if (handCards.size()>=4) {
-          println(handCards.get(2).posX + " " + handCards.get(2).posX);
-        }
-      } else {
       }
     }
   }
@@ -33,12 +29,11 @@ class Hand {
       handCards.add(c);
     }
   }
-  void load(){
-  for (int i=0; i<startingHandsize;i++){
-  deck.get(0).imageLoader();
-  addCard(deck.get(0));
-  deck.remove(0);
-  }
-  
+  void load() {
+    for (int i=0; i<startingHandsize; i++) {
+      deck.get(0).imageLoader();
+      addCard(deck.get(0));
+      deck.remove(0);
+    }
   }
 }

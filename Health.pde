@@ -1,4 +1,4 @@
-class Health {
+class Health { //<>// //<>// //<>// //<>// //<>// //<>// //<>//
   int maxHealth;
   int currentHealth;
   PImage heart;
@@ -8,7 +8,7 @@ class Health {
     maxHealth=maxHealthInput;
     currentHealth=startingHealth;
   }
-  
+
   void playerHeal(int healAmmount) {
     if (currentHealth<maxHealth) {
       currentHealth=currentHealth+healAmmount;
@@ -17,22 +17,22 @@ class Health {
     }
   }
 
-  void playerHurt(int damageAmmount) { //<>//
-    currentHealth=currentHealth-damageAmmount; //<>//
-    if (currentHealth<0) { //<>//
-      println("you lose"); //<>//
-    } //<>//
-  } //<>//
-   //<>//
+  void playerHurt(int damageAmmount) {
+    currentHealth=currentHealth-damageAmmount;
+    if (currentHealth<0) {
+      println("you lose");
+    }
+  }
+
   void ui() {
     for (int i=0; i<currentHealth; i++) {
-      image(heart,width/2-(heart.width*currentHealth)/2+i*heart.width,height-heart.height);
+      image(heart, width/2-(heart.width*currentHealth)/2+i*heart.width, height-heart.height);
     }
   }
 
 
-void load(){
-  heart = loadImage("heart.png");
-  heart.resize(width/20,width/20);
-}
+  void load() {
+    heart = loadImage("heart.png");
+    heart.resize(width/20, width/20);
+  }
 }

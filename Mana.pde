@@ -4,7 +4,7 @@ class Mana {
   int addedManaPerRound;
   int currentMana;
   int activeMana;
-  PImage manaCrystal,usedManaCrystal;
+  PImage manaCrystal, usedManaCrystal;
 
   Mana(int maxManaInput, int startingManaInput, int addedManaPerRoundInput) {
     maxMana = maxManaInput;
@@ -27,27 +27,23 @@ class Mana {
     activeMana=activeMana-manaAmmount;
   }
 
-    void ui() {
+  void ui() {
     int manaDifference=currentMana-activeMana;
-    println("Active = " + playerMana.activeMana + "  Current = " + playerMana.currentMana + "  DIFFERENCE = " + manaDifference);
     //for Brugt mana
-        for (int i=0; i<manaDifference; i++) {
-      image(usedManaCrystal,width/2-(usedManaCrystal.width*currentMana)/2+activeMana*usedManaCrystal.width+i*usedManaCrystal.width,height/2);
+    for (int i=0; i<manaDifference; i++) {
+      image(usedManaCrystal, width/2-(usedManaCrystal.width*currentMana)/2+activeMana*usedManaCrystal.width+i*usedManaCrystal.width, height/2);
     }
-          //for useable mana
+    //for useable mana
     for (int i=0; i<activeMana; i++) {
-      image(manaCrystal,width/2-(manaCrystal.width*currentMana)/2+i*manaCrystal.width,height/2);
-      
+      image(manaCrystal, width/2-(manaCrystal.width*currentMana)/2+i*manaCrystal.width, height/2);
     }
   }
-  
+
   void load() {
-  manaCrystal=loadImage("manacrystal.png");
-  manaCrystal.resize(width/20,width/15);
-  usedManaCrystal=loadImage("manacrystal.png");
-  usedManaCrystal.filter(GRAY);
-  usedManaCrystal.resize(width/20,width/15);
+    manaCrystal=loadImage("manacrystal.png");
+    manaCrystal.resize(width/20, width/15);
+    usedManaCrystal=loadImage("manacrystal.png");
+    usedManaCrystal.filter(GRAY);
+    usedManaCrystal.resize(width/20, width/15);
   }
-  
 }
-  

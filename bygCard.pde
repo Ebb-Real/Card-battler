@@ -10,7 +10,7 @@ class BygCard implements builder {
     CardBP.name = n;
     return this;
   }
-  
+
   BygCard setDescription(String des) {
     CardBP.description = des;
     return this;
@@ -25,7 +25,7 @@ class BygCard implements builder {
     CardBP.minion = mi;
     return this;
   }
-  
+
   BygCard setPictureFile(String cpf) {
     CardBP.cardPictureFile = cpf;
     return this;
@@ -62,7 +62,7 @@ class BygCard implements builder {
     CardBP.posY = poy;
     return this;
   }
-  
+
   Card build() {
     return CardBP;
   }
