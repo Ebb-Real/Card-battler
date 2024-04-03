@@ -60,7 +60,7 @@ void setup() {
     ;
   b2.hide();
 
-  PImage[] imgs3 = {loadImage("End Turn1.png"), loadImage("End Turn2.png"), loadImage("End Turn3.png")};
+  PImage[] imgs3 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
   menuButton = cp5.addButton("menuButton")
     .setPosition(1100, 300)
     .setImages(imgs3)
