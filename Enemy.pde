@@ -26,6 +26,7 @@ class Enemy {
     action=int(random(10));
     switch(action) {
       case (0):
+      power=0;
       println("miss");
       currentIntent=missIntent;
       break;
@@ -100,7 +101,10 @@ class Enemy {
       for (int i=0; i<currentEnemyHealth; i++) {
       image(enemyHeart,width/2-(enemyHeart.width*currentEnemyHealth)/2+i*enemyHeart.width,0);
     }
+    
     image(currentIntent,width/4*3,height/2);
+    textSize(height/7);
+    text(Integer.toString(power), width/4*3+currentIntent.width/2, height/2+currentIntent.height/2);
   }
   
   void enemyLoad(){

@@ -187,6 +187,7 @@ void gameStartup() {
 playerHealth.load();  
 enemy.enemyLoad();
 playerHand.load();
+playerMana.load();
   
 
   

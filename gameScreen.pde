@@ -12,7 +12,7 @@ class GameScreen extends GameState {
     playerHand.update(); //<>//
     playerHealth.ui(); //<>//
     enemy.enemyUI(); //<>//
-
+    playerMana.ui();
     for (int i = 0; i <= playerHand.handCards.size() - 1; i++) {
       playerHand.handCards.get(i).draw();
     }
