@@ -137,7 +137,7 @@ public void menuButton() {
   showButton();
   deck.clear();
   playerHand.handCards.clear();
-  enemy.enemyStartingHealth=enemy.currentEnemyHealth;
+  enemy.currentEnemyHealth=enemy.enemyStartingHealth;
   playerHealth.currentHealth=playerHealth.startingHealth;
   playerMana.currentMana=playerMana.startingMana;
   manager.skiftGameState("mainScreen");
