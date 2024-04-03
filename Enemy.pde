@@ -1,5 +1,6 @@
 class Enemy {
   int currentEnemyHealth;
+  int enemyStartingHealth;
   int enemyMaxHealth;
   int attackMinimum;
   int attackMaximum;
@@ -9,8 +10,9 @@ class Enemy {
   int healMaximum;
   PImage enemyHeart;
   PImage attackIntent, healIntent, missIntent, critIntent, currentIntent;
-  Enemy(int enemyStartingHealth, int enemyMaxHealthInput, int attackMinimumInput, int attackMaximumInput, int healMinimumInput, int healMaximumInput, int critMinimumInput, int critMaximumInput) {
-    currentEnemyHealth=enemyStartingHealth;
+  Enemy(int enemyStartingHealthInput, int enemyMaxHealthInput, int attackMinimumInput, int attackMaximumInput, int healMinimumInput, int healMaximumInput, int critMinimumInput, int critMaximumInput) {
+    enemyStartingHealth=enemyStartingHealthInput;
+    currentEnemyHealth=enemyStartingHealthInput;
     enemyMaxHealth=enemyMaxHealthInput;
     attackMinimum=attackMinimumInput;
     attackMaximum=attackMaximumInput;

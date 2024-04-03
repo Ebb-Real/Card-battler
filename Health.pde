@@ -1,10 +1,12 @@
 class Health {
   int maxHealth;
   int currentHealth;
+  int startingHealth;
   PImage heart;
 
 
-  Health(int startingHealth, int maxHealthInput) {
+  Health(int startingHealthInput, int maxHealthInput) {
+    startingHealth=startingHealthInput;
     maxHealth=maxHealthInput;
     currentHealth=startingHealth;
   }

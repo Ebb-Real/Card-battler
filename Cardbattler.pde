@@ -3,7 +3,7 @@ import java.util.Collections;
 GameStateManager manager;
 
 ControlP5 cp5;
-controlP5.Button b1, b2;
+controlP5.Button b1, b2, sb, menuButton;
 
 
 //integers and arraylists
@@ -39,7 +39,7 @@ void setup() {
 
   //GUI
   cp5 = new ControlP5(this);
-  cp5.addButton("colorA")
+  sb = cp5.addButton("colorA")
     .setPosition(100, 100)
     .setSize(200, 19)
     ;
@@ -60,6 +60,13 @@ void setup() {
     ;
   b2.hide();
 
+  PImage[] imgs3 = {loadImage("End Turn1.png"), loadImage("End Turn2.png"), loadImage("End Turn3.png")};
+  menuButton = cp5.addButton("menuButton")
+    .setPosition(1100, 300)
+    .setImages(imgs3)
+    .updateSize()
+    ;
+  menuButton.hide();
 
   fullScreen();
 
@@ -113,12 +120,6 @@ public void colorA() {
   manager.skiftGameState("gameScreen");
 }
 
-//function colorB will receive changes from
-//controller with name colorB
-public void colorB() {
-  println("a button event from colorB: ");
-}
-
 //function colorC will receive changes from
 //controller with name colorC
 boolean drawn=false;
@@ -130,11 +131,31 @@ public void drawKort() {
   }
 }
 
+public void menuButton() {
+  println("a button event from bruh: ");
+  gameDisplay = false;
+  showButton();
+  deck.clear();
+  playerHand.handCards.clear();
+  enemy.enemyStartingHealth=enemy.currentEnemyHealth;
+  playerHealth.currentHealth=playerHealth.startingHealth;
+  playerMana.currentMana=playerMana.startingMana;
+  manager.skiftGameState("mainScreen");
+  sb.show();
+}
+
+
 void showButton() {
 
   if (gameDisplay == true) {
     b1.show();
     b2.show();
+    menuButton.show();
+  }
+  else{ 
+    b1.hide();
+    b2.hide();
+    menuButton.hide();
   }
 }
 
@@ -173,7 +194,7 @@ void mouseReleased() {
 
 
 void gameStartup() {
-
+  sb.hide();
   //deck
   cardCreator.Create("claw");
   cardCreator.Create("claw");
@@ -193,3 +214,5 @@ void gameStartup() {
   playerMana.activeMana=playerMana.currentMana;
   enemy.intent();
 }
+
+  
