@@ -40,9 +40,16 @@ void setup() {
 
   //GUI
   cp5 = new ControlP5(this);
+  //sb = cp5.addButton("StartGame")
+  //  .setPosition(width/2-300, height/2-40)
+  //  .setSize(600, 40)
+  //  ;
+
+  PImage[] imgs4 = {loadImage("start1.png"), loadImage("start2.png"), loadImage("start3.png")};
   sb = cp5.addButton("StartGame")
-    .setPosition(width/2-300, height/2-40)
-    .setSize(600, 40)
+    .setPosition(width/2-175, height/2-100)
+    .setImages(imgs4)
+    .updateSize()
     ;
 
   PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
