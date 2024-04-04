@@ -7,5 +7,6 @@ class playArea {
     sizeX = inputSizeX;
     sizeY = inputSizeY;
   }
+  
   //tint();
 }
