@@ -46,7 +46,7 @@ void setup() {
   //  ;
 
   PImage[] imgs4 = {loadImage("start1.png"), loadImage("start2.png"), loadImage("start3.png")};
-  b1 = cp5.addButton("StartGame")
+  sb = cp5.addButton("StartGame")
     .setPosition(width/2-175, height/2-100)
     .setImages(imgs4)
     .updateSize()
