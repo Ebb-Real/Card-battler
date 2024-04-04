@@ -5,6 +5,8 @@ GameStateManager manager;
 ControlP5 cp5;
 controlP5.Button b1, b2, sb, menuButton;
 
+PImage bg;
+
 //integers and arraylists
 ArrayList<Card> deck = new ArrayList<Card>();
 boolean gameDisplay = false;
@@ -25,6 +27,9 @@ Enemy enemy= new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
 Health playerHealth= new Health(10, 10);
 
 void setup() {
+  bg = loadImage("kiryu");
+  bg.resize(width, height);
+  
   manager = new GameStateManager();
 
   manager.tilFoejGameState("mainScreen", new MainScreen());
@@ -71,7 +76,8 @@ void setup() {
 }
 
 void draw() {
-  background(0, 0, 255);
+  //background(0, 0, 255);
+  image(bg, 0, 0);
   manager.draw();
 }
 
