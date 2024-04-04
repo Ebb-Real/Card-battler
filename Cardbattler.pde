@@ -5,7 +5,6 @@ GameStateManager manager;
 ControlP5 cp5;
 controlP5.Button b1, b2, sb, menuButton;
 
-
 //integers and arraylists
 ArrayList<Card> deck = new ArrayList<Card>();
 boolean gameDisplay = false;
@@ -25,17 +24,14 @@ Enemy enemy= new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
 //create Health object
 Health playerHealth= new Health(10, 10);
 
-
 void setup() {
-
   manager = new GameStateManager();
 
   manager.tilFoejGameState("mainScreen", new MainScreen());
   manager.tilFoejGameState("gameScreen", new GameScreen());
   manager.tilFoejGameState("gameOverScreen", new GameOverScreen());
-    manager.tilFoejGameState("winScreen", new WinScreen());
+  manager.tilFoejGameState("winScreen", new WinScreen());
   manager.skiftGameState("mainScreen");
-
 
   //GUI
   cp5 = new ControlP5(this);
@@ -69,10 +65,6 @@ void setup() {
   menuButton.hide();
 
   fullScreen();
-
-
-
-
 
   //mana setup
   playerMana.currentMana=playerMana.startingMana;
@@ -144,15 +136,13 @@ public void menuButton() {
   sb.show();
 }
 
-
 void showButton() {
 
   if (gameDisplay == true) {
     b1.show();
     b2.show();
     menuButton.show();
-  }
-  else{ 
+  } else {
     b1.hide();
     b2.hide();
     menuButton.hide();
@@ -192,7 +182,6 @@ void mouseReleased() {
   }
 }
 
-
 void gameStartup() {
   sb.hide();
   //deck
@@ -203,16 +192,12 @@ void gameStartup() {
   cardCreator.Create("healing hands");
   Collections.shuffle(deck);
 
-
   //ui load
   playerHealth.load();
   enemy.enemyLoad();
   playerHand.load();
   playerMana.load();
 
-
   playerMana.activeMana=playerMana.currentMana;
   enemy.intent();
 }
-
-  

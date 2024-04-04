@@ -1,4 +1,4 @@
-//base for cards 
+//base for cards
 class Card {
   String name;
   String description;
@@ -42,6 +42,7 @@ class Card {
     text(description, posX, posY + cardHeight/30);
     pop();
   }
+
   void Play() {
     playerMana.manaSpend(mana);
     enemy.enemyHurt(damage);
