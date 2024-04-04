@@ -47,7 +47,7 @@ void setup() {
 
   PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
   b1 = cp5.addButton("drawKort")
-    .setPosition(140, 300)
+    .setPosition(100, 850)
     .setImages(imgs)
     .updateSize()
     ;
