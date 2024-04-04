@@ -5,6 +5,16 @@ class BygCard implements builder {
   BygCard() {
     CardBP = new Card();
   }
+  
+  BygCard setPosX(float pox) {
+    CardBP.posX = pox;
+    return this;
+  }
+
+  BygCard setPosY(float poy) {
+    CardBP.posY = poy;
+    return this;
+  }
 
   BygCard setNavn(String n) {
     CardBP.name = n;
@@ -21,24 +31,8 @@ class BygCard implements builder {
     return this;
   }
 
-  BygCard Minion(boolean mi) {
-    CardBP.minion = mi;
-    return this;
-  }
-
   BygCard setPictureFile(String cpf) {
     CardBP.cardPictureFile = cpf;
-    return this;
-  }
-
-  //Minion
-  BygCard setHealth(int h) {
-    CardBP.health = h;
-    return this;
-  }
-
-  BygCard setPower(int a) {
-    CardBP.power = a;
     return this;
   }
 
@@ -50,16 +44,6 @@ class BygCard implements builder {
 
   BygCard setHeal(int ha) {
     CardBP.heal = ha;
-    return this;
-  }
-
-  BygCard setPosX(float pox) {
-    CardBP.posX = pox;
-    return this;
-  }
-
-  BygCard setPosY(float poy) {
-    CardBP.posY = poy;
     return this;
   }
 
