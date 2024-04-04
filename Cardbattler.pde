@@ -55,7 +55,7 @@ void setup() {
 
   PImage[] imgs2 = {loadImage("End Turn1.png"), loadImage("End Turn2.png"), loadImage("End Turn3.png")};
   b2 = cp5.addButton("Endturn")
-    .setPosition(600, 300)
+    .setPosition(25, 25)
     .setImages(imgs2)
     .updateSize()
     ;
@@ -63,7 +63,7 @@ void setup() {
 
   PImage[] imgs3 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
   menuButton = cp5.addButton("menuButton")
-    .setPosition(1100, 300)
+    .setPosition(1500, 50)
     .setImages(imgs3)
     .updateSize()
     ;

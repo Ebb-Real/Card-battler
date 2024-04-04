@@ -3,9 +3,6 @@ class Card {
   String name;
   String description;
   int mana;
-  boolean minion;
-  int power;
-  int health;
   int damage;
   int heal;
   float posX;
