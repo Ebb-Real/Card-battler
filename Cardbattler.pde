@@ -27,7 +27,7 @@ Enemy enemy= new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
 Health playerHealth= new Health(10, 10);
 
 void setup() {
-  bg = loadImage("kiryu");
+  bg = loadImage("kiryu.png");
   bg.resize(width, height);
   
   manager = new GameStateManager();
@@ -40,9 +40,9 @@ void setup() {
 
   //GUI
   cp5 = new ControlP5(this);
-  sb = cp5.addButton("colorA")
-    .setPosition(100, 100)
-    .setSize(200, 19)
+  sb = cp5.addButton("StartGame")
+    .setPosition(width/2-300, height/2-40)
+    .setSize(600, 40)
     ;
 
   PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
@@ -109,7 +109,7 @@ public void controlEvent(ControlEvent theEvent) {
 
 //function colorA will receive changes from
 //controller with name colorA
-public void colorA() {
+public void StartGame() {
   println("a button event from colorA: ");
   gameDisplay = true;
   showButton();
