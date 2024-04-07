@@ -85,6 +85,10 @@ class Enemy {
   void enemyHurt(int damage) {
     currentEnemyHealth=currentEnemyHealth-damage;
     if (currentEnemyHealth<=0) {
+      b1.hide();
+      b2.hide();
+      menuButton.hide();
+      menuButton2.show();
       manager.skiftGameState("winScreen");
     }
   }

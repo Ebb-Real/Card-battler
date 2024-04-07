@@ -3,7 +3,7 @@ import java.util.Collections;
 GameStateManager manager;
 
 ControlP5 cp5;
-controlP5.Button b1, b2, sb, menuButton;
+controlP5.Button b1, b2, sb, menuButton, menuButton2;
 
 PImage bg;
 
@@ -79,7 +79,14 @@ void setup() {
     ;
   menuButton.hide();
 
-  
+    PImage[] imgs5 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
+  menuButton2 = cp5.addButton("menuButton2")
+    .setPosition(width/2-175, height/2+50)
+    .setImages(imgs5)
+    .updateSize()
+    ;  
+    menuButton2.hide();
+    
   fullScreen();
 
   //mana setup
@@ -151,6 +158,21 @@ public void menuButton() {
   imageMode(CORNER);
   manager.skiftGameState("mainScreen");
   sb.show();
+}
+
+public void menuButton2() {
+  println("a button event from bruh: ");
+  gameDisplay = false;
+  showButton();
+  deck.clear();
+  playerHand.handCards.clear();
+  enemy.currentEnemyHealth = enemy.enemyStartingHealth;
+  playerHealth.currentHealth = playerHealth.startingHealth;
+  playerMana.currentMana = playerMana.startingMana;
+  imageMode(CORNER);
+  manager.skiftGameState("mainScreen");
+  sb.show();
+  menuButton2.hide();
 }
 
 void showButton() {
