@@ -204,7 +204,12 @@ ArrayList<Card> heldCard = new ArrayList<Card>();
 
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
-    if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2) {
+    //if mouse over card
+    if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2
+    && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2
+    && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2
+    && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2) {
+      
       if (heldCard.size() <= 0) {
         heldCard.add(playerHand.handCards.get(i));
       }
@@ -221,7 +226,14 @@ void mouseReleased() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
     playerHand.handCards.get(i).grabbed = false;
   }
-  if (mouseX <= mainPlayArea.posX + mainPlayArea.sizeX / 2 && mouseX >= mainPlayArea.posX - mainPlayArea.sizeX / 2 && mouseY <= mainPlayArea.posY + mainPlayArea.sizeY / 2 && mouseY >= mainPlayArea.posY - mainPlayArea.sizeY / 2 && heldCard.size() > 0) {
+  
+  //if mouse over play area
+  if (mouseX <= mainPlayArea.posX + mainPlayArea.sizeX / 2
+  && mouseX >= mainPlayArea.posX - mainPlayArea.sizeX / 2
+  && mouseY <= mainPlayArea.posY + mainPlayArea.sizeY / 2
+  && mouseY >= mainPlayArea.posY - mainPlayArea.sizeY / 2
+  && heldCard.size() > 0) {
+    
     heldCard.get(0).play();
     if (heldCard.get(0).canAfford) {
       for (int i = 0; i < playerHand.handCards.size(); i++) {
