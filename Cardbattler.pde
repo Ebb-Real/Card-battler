@@ -108,10 +108,7 @@ void cardDraw() {
     deckEmpty();
     return;
   }
-  if (playerHand.handIsFull) {
-    handFull();
-    return;
-  }
+
   playerHand.addCard(deck.get(0));
   deck.get(0).imageLoader();
   deck.remove(0);
@@ -124,12 +121,6 @@ void deckEmpty() {
       // If the spent time is above the defined duration   
       
   println("Deck is empty");
-}
-
-void handFull() {
-  println("Hand is full");
-  displayTekstMaxHand = true;
-    startTid = millis();
 }
 
 void noMana() {

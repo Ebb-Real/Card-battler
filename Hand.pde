@@ -1,7 +1,6 @@
 class Hand {
   int handLimit;
   int startingHandsize;
-  boolean handIsFull = false;
   ArrayList<Card> handCards = new ArrayList<Card>();
 
   Hand(int handLimitInput, int startingHandsizeInput) {
@@ -20,18 +19,24 @@ class Hand {
 
   void addCard(Card c) {
     if (handCards.size() < handLimit) {
-      handIsFull = false;
       handCards.add(c);
-    } else {
-      handIsFull = true;
+    }
+    else {
+      handFull();
     }
   }
-  
+
   void load() {
     for (int i = 0; i<startingHandsize; i++) {
       deck.get(0).imageLoader();
       addCard(deck.get(0));
       deck.remove(0);
     }
+  }
+
+  void handFull() {
+    println("Hand is full");
+    displayTekstMaxHand = true;
+    startTid = millis();
   }
 }
