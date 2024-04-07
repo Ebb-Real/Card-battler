@@ -32,7 +32,7 @@ PlayArea mainPlayArea = new PlayArea(1000, 500);
 void setup() {
   bg = loadImage("kiryu.png");
   bg.resize(width, height);
-  
+
   manager = new GameStateManager();
 
   manager.tilFoejGameState("mainScreen", new MainScreen());
@@ -92,7 +92,7 @@ void draw() {
 }
 
 void cardDraw() {
-  if (deck.size()<=0) {
+  if (deck.size() <= 0) {
     deckEmpty();
     return;
   }
@@ -130,12 +130,12 @@ public void StartGame() {
 
 //function colorC will receive changes from
 //controller with name colorC
-boolean drawn=false;
+boolean drawn = false;
 public void drawKort() {
-  if (drawn==false) {
+  if (drawn == false) {
     println("a button event from colorC: ");
     cardDraw();
-    drawn=true;
+    drawn = true;
   }
 }
 
@@ -145,10 +145,12 @@ public void menuButton() {
   showButton();
   deck.clear();
   playerHand.handCards.clear();
-  enemy.currentEnemyHealth=enemy.enemyStartingHealth;
-  playerHealth.currentHealth=playerHealth.startingHealth;
-  playerMana.currentMana=playerMana.startingMana;
+  enemy.currentEnemyHealth = enemy.enemyStartingHealth;
+  playerHealth.currentHealth = playerHealth.startingHealth;
+  playerMana.currentMana = playerMana.startingMana;
+  push();
   imageMode(CORNER);
+  pop();
   manager.skiftGameState("mainScreen");
   sb.show();
 }
@@ -159,7 +161,8 @@ void showButton() {
     b1.show();
     b2.show();
     menuButton.show();
-  } else {
+  } 
+  else {
     b1.hide();
     b2.hide();
     menuButton.hide();
@@ -177,18 +180,24 @@ public void Endturn() {
 
   enemy.enemyTurn();
   enemy.intent();
-  drawn=false;
+  drawn = false;
   println("a button event from Endturn: ");
   println("health = " + playerHealth.currentHealth);
 }
 
-boolean grabbing=false;
+ArrayList<Card> heldCard = new ArrayList<Card>();
+
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
-    if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2 && grabbing==false) {
-      playerHand.handCards.get(i).grabbed = true;
-      playerHand.handCards.get(i).posX = mouseX;
-      playerHand.handCards.get(i).posY = mouseY;
+    if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2) {
+      if(heldCard.size() <= 0) {
+        heldCard.add(playerHand.handCards.get(i));
+      }
+      if (heldCard.get(0) == playerHand.handCards.get(i)) {
+        playerHand.handCards.get(i).grabbed = true;
+        playerHand.handCards.get(i).posX = mouseX;
+        playerHand.handCards.get(i).posY = mouseY;
+      }
     }
   }
 }
@@ -196,6 +205,9 @@ void mouseDragged() {
 void mouseReleased() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
     playerHand.handCards.get(i).grabbed = false;
+  }
+  if (heldCard.size() > 0) {
+    heldCard.remove(0);
   }
 }
 
