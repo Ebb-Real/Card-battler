@@ -40,7 +40,7 @@ class Card {
     pop();
   }
 
-  void Play() {
+  void play() {
     playerMana.manaSpend(mana);
     enemy.enemyHurt(damage);
     playerHealth.playerHeal(heal);

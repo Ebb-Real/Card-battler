@@ -204,6 +204,10 @@ void mouseReleased() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
     playerHand.handCards.get(i).grabbed = false;
   }
+  if (mouseX <= mainPlayArea.posX + mainPlayArea.sizeX / 2 && mouseX >= mainPlayArea.posX - mainPlayArea.sizeX / 2 && mouseY <= mainPlayArea.posY + mainPlayArea.sizeY / 2 && mouseY >= mainPlayArea.posY - mainPlayArea.sizeY / 2 && heldCard.size() > 0) {
+    heldCard.get(0).play();
+    heldCard.remove(0);
+  }
   if (heldCard.size() > 0) {
     heldCard.remove(0);
   }
