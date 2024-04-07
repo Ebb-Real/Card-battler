@@ -41,6 +41,11 @@ class BygCard implements builder {
     CardBP.damage = d;
     return this;
   }
+  
+  BygCard setSelfDamage(int sd) {
+    CardBP.selfDamage = sd;
+    return this;
+  }
 
   BygCard setHeal(int ha) {
     CardBP.heal = ha;

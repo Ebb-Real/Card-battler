@@ -5,6 +5,7 @@ class Card {
   int manaCost;
   int manaAdd;
   int damage;
+  int selfDamage;
   int heal;
   float posX;
   float posY;
@@ -49,6 +50,7 @@ class Card {
       playerMana.manaGain(manaAdd);
       enemy.enemyHurt(damage);
       playerHealth.playerHeal(heal);
+      playerHealth.playerHurt(selfDamage);
       canAfford = true;
     }
     else {
