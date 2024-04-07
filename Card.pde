@@ -2,7 +2,7 @@
 class Card {
   String name;
   String description;
-  int mana;
+  int manaCost;
   int damage;
   int heal;
   float posX;
@@ -34,7 +34,7 @@ class Card {
     text(name, posX, posY - cardHeight/2.4);
     fill(255, 0, 0);
     image(manaIcon, posX + cardLength / 2 - 27.5, posY - cardHeight/2 + 10);
-    text(Integer.toString(mana), posX + cardLength / 2 - 26, posY - cardHeight / 2 + 20);
+    text(Integer.toString(manaCost), posX + cardLength / 2 - 26, posY - cardHeight / 2 + 20);
     fill(0);
     textSize(20);
     text(description, posX, posY + cardHeight/30);
@@ -42,8 +42,8 @@ class Card {
   }
 
   void play() {
-    if(playerMana.activeMana >= heldCard.get(0).mana) {
-      playerMana.manaSpend(mana);
+    if(playerMana.activeMana >= heldCard.get(0).manaCost) {
+      playerMana.manaSpend(manaCost);
       enemy.enemyHurt(damage);
       playerHealth.playerHeal(heal);
       canAfford = true;

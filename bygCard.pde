@@ -26,8 +26,8 @@ class BygCard implements builder {
     return this;
   }
 
-  BygCard setMana(int m) {
-    CardBP.mana = m;
+  BygCard setManaCost(int m) {
+    CardBP.manaCost = m;
     return this;
   }
 
