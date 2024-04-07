@@ -3,7 +3,7 @@ interface builder {
   //generic data
   builder setNavn(String name);
   builder setDescription(String description);
-  builder setMana(int mana);
+  builder setManaCost(int mana);
   builder setPosX(float setPosX);
   builder setPosY(float setPosY);
   builder setPictureFile(String cardPictureFile);

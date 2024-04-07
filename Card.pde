@@ -2,7 +2,7 @@
 class Card {
   String name;
   String description;
-  int mana;
+  int manaCost;
   int damage;
   int heal;
   float posX;
@@ -10,6 +10,7 @@ class Card {
   int cardLength = 250;
   int cardHeight = 375;
   boolean grabbed = false;
+  boolean canAfford;
   PImage cardPicture;
   String cardPictureFile = "bruh2.png";
 
@@ -33,17 +34,23 @@ class Card {
     text(name, posX, posY - cardHeight/2.4);
     fill(255, 0, 0);
     image(manaIcon, posX + cardLength / 2 - 27.5, posY - cardHeight/2 + 10);
-    text(Integer.toString(mana), posX + cardLength / 2 - 26, posY - cardHeight / 2 + 20);
+    text(Integer.toString(manaCost), posX + cardLength / 2 - 26, posY - cardHeight / 2 + 20);
     fill(0);
     textSize(20);
     text(description, posX, posY + cardHeight/30);
     pop();
   }
 
-  void Play() {
-    playerMana.manaSpend(mana);
-    enemy.enemyHurt(damage);
-    playerHealth.playerHeal(heal);
+  void play() {
+    if(playerMana.activeMana >= heldCard.get(0).manaCost) {
+      playerMana.manaSpend(manaCost);
+      enemy.enemyHurt(damage);
+      playerHealth.playerHeal(heal);
+      canAfford = true;
+    }
+    else {
+      canAfford = false;
+    }
   }
 
   void imageLoader() {
