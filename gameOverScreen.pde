@@ -5,9 +5,6 @@ class GameOverScreen extends GameState {
 
   void draw() {
     background(0, 0, 0);
-    
     text("Game Over", width/2, height/2);
-      
-    
   }
 }
