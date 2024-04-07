@@ -148,9 +148,7 @@ public void menuButton() {
   enemy.currentEnemyHealth = enemy.enemyStartingHealth;
   playerHealth.currentHealth = playerHealth.startingHealth;
   playerMana.currentMana = playerMana.startingMana;
-  push();
   imageMode(CORNER);
-  pop();
   manager.skiftGameState("mainScreen");
   sb.show();
 }
