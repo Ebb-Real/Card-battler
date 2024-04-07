@@ -1,5 +1,5 @@
 class CardCreator {
-  Card claw, healingHands, manaVial, dagger;
+  Card claw, healingHands, manaVial, dagger, siphonBlood;
   CardCreator() {
   }
 
@@ -15,6 +15,9 @@ class CardCreator {
       break;
     case "dagger":
       deck.add(dagger = new BygCard().setNavn("Dagger").setDescription("Deal 1 damage to \n opponent").setManaCost(0).setDamage(1).setPictureFile("dagger.png").build());
+      break;
+    case "siphon blood":
+      deck.add(siphonBlood = new BygCard().setNavn("Siphon Blood").setDescription("Deal 2 damage to \n opponent and heal yourself \n for 1 HP").setManaCost(3).setDamage(2).setHeal(1).setPictureFile("blood_magic.png").build());
       break;
     }
   }

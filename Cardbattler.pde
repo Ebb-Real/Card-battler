@@ -252,6 +252,8 @@ void gameStartup() {
   cardCreator.Create("dagger");
   cardCreator.Create("dagger");
   cardCreator.Create("dagger");
+  cardCreator.Create("siphon blood");
+  cardCreator.Create("siphon blood");
   cardCreator.Create("healing hands");
   cardCreator.Create("healing hands");
   cardCreator.Create("healing hands");
