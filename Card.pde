@@ -10,6 +10,7 @@ class Card {
   int cardLength = 250;
   int cardHeight = 375;
   boolean grabbed = false;
+  boolean canAfford;
   PImage cardPicture;
   String cardPictureFile = "bruh2.png";
 
@@ -41,9 +42,15 @@ class Card {
   }
 
   void play() {
-    playerMana.manaSpend(mana);
-    enemy.enemyHurt(damage);
-    playerHealth.playerHeal(heal);
+    if(playerMana.activeMana >= heldCard.get(0).mana) {
+      playerMana.manaSpend(mana);
+      enemy.enemyHurt(damage);
+      playerHealth.playerHeal(heal);
+      canAfford = true;
+    }
+    else {
+      canAfford = false;
+    }
   }
 
   void imageLoader() {
