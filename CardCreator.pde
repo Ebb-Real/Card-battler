@@ -1,5 +1,5 @@
 class CardCreator {
-  Card claw, healingHands, manaVial, dagger, siphonBlood, flamingMana;
+  Card claw, healingHands, manaVial, dagger, siphonBlood, flamingMana, fireSword;
   CardCreator() {
   }
 
@@ -21,6 +21,9 @@ class CardCreator {
       break;
     case "siphon blood":
       deck.add(siphonBlood = new BygCard().setNavn("Siphon Blood").setDescription("Deal 2 damage to \n opponent and heal yourself \n for 1 HP").setManaCost(3).setDamage(2).setHeal(1).setPictureFile("blood_magic.png").build());
+      break;
+    case "fire sword":
+      deck.add(fireSword = new BygCard().setNavn("Fire Sword").setDescription("Deal 6 damage and \n take 1 damage").setManaCost(5).setDamage(6).setSelfDamage(1).setPictureFile("fire_sword.png").build());
       break;
     }
   }
