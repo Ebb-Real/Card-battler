@@ -46,6 +46,11 @@ class BygCard implements builder {
     CardBP.heal = ha;
     return this;
   }
+  
+  BygCard setManaAdd(int ma) {
+    CardBP.manaAdd = ma;
+    return this;
+  }
 
   Card build() {
     return CardBP;

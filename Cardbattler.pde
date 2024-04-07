@@ -225,9 +225,11 @@ void gameStartup() {
   //deck
   cardCreator.Create("claw");
   cardCreator.Create("claw");
-  cardCreator.Create("healing hands");
   cardCreator.Create("claw");
   cardCreator.Create("healing hands");
+  cardCreator.Create("healing hands");
+  cardCreator.Create("mana vial");
+  cardCreator.Create("mana vial");
   Collections.shuffle(deck);
 
   //ui load

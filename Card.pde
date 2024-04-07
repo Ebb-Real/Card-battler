@@ -3,6 +3,7 @@ class Card {
   String name;
   String description;
   int manaCost;
+  int manaAdd;
   int damage;
   int heal;
   float posX;
@@ -44,6 +45,8 @@ class Card {
   void play() {
     if(playerMana.activeMana >= heldCard.get(0).manaCost) {
       playerMana.manaSpend(manaCost);
+      playerMana.manaIncrease(manaAdd);
+      playerMana.manaGain(manaAdd);
       enemy.enemyHurt(damage);
       playerHealth.playerHeal(heal);
       canAfford = true;

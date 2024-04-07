@@ -31,7 +31,7 @@ class Hand {
   }
   
   void load() {
-    for (int i=0; i<startingHandsize; i++) {
+    for (int i = 0; i<startingHandsize; i++) {
       deck.get(0).imageLoader();
       addCard(deck.get(0));
       deck.remove(0);
