@@ -53,6 +53,7 @@ class Card {
     }
     else {
       canAfford = false;
+      noMana();
     }
   }
 

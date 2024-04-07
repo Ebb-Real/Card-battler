@@ -7,6 +7,11 @@ controlP5.Button b1, b2, sb, menuButton, menuButton2;
 
 PImage bg;
 
+
+int startTid;
+int displayTid = 3000; //
+boolean displayTekstEmptyDeck, displayTekstNoMana, displayTekstMaxHand;
+
 //integers and arraylists
 ArrayList<Card> deck = new ArrayList<Card>();
 boolean gameDisplay = false;
@@ -18,7 +23,7 @@ CardCreator cardCreator = new CardCreator();
 Mana playerMana = new Mana(10, 1, 1);
 
 //create hand object
-Hand playerHand = new Hand(10, 3);
+Hand playerHand = new Hand(7, 3);
 
 //create enemy object
 Enemy enemy = new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
@@ -113,11 +118,23 @@ void cardDraw() {
 }
 
 void deckEmpty() {
+  
+  displayTekstEmptyDeck = true;
+  startTid = millis();
+      // If the spent time is above the defined duration   
+      
   println("Deck is empty");
 }
 
 void handFull() {
   println("Hand is full");
+  displayTekstMaxHand = true;
+    startTid = millis();
+}
+
+void noMana() {
+    displayTekstNoMana = true;
+  startTid = millis();
 }
 
 public void controlEvent(ControlEvent theEvent) {
@@ -141,6 +158,7 @@ boolean drawn = false;
 public void drawKort() {
   if (drawn == false) {
     println("a button event from colorC: ");
+    cardDraw();
     cardDraw();
     drawn = true;
   }
