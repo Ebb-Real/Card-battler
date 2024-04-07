@@ -262,14 +262,22 @@ void mouseReleased() {
 
 void gameStartup() {
   sb.hide();
+  
   //deck
   cardCreator.Create("claw");
   cardCreator.Create("claw");
   cardCreator.Create("claw");
+  cardCreator.Create("dagger");
+  cardCreator.Create("dagger");
+  cardCreator.Create("dagger");
+  cardCreator.Create("siphon blood");
+  cardCreator.Create("siphon blood");
+  cardCreator.Create("healing hands");
   cardCreator.Create("healing hands");
   cardCreator.Create("healing hands");
   cardCreator.Create("mana vial");
   cardCreator.Create("mana vial");
+  cardCreator.Create("flaming mana");
   Collections.shuffle(deck);
 
   //ui load
