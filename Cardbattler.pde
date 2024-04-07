@@ -55,9 +55,9 @@ void setup() {
     .updateSize()
     ;
 
-  PImage[] imgs = {loadImage("bruh2.png"), loadImage("bruh3.jpg"), loadImage("bruh4.png")};
+  PImage[] imgs = {loadImage("Draw Card1.png"), loadImage("Draw Card2.png"), loadImage("Draw Card3.png")};
   b1 = cp5.addButton("drawKort")
-    .setPosition(100, 850)
+    .setPosition(350, height/1.2)
     .setImages(imgs)
     .updateSize()
     ;
@@ -65,7 +65,7 @@ void setup() {
 
   PImage[] imgs2 = {loadImage("End Turn1.png"), loadImage("End Turn2.png"), loadImage("End Turn3.png")};
   b2 = cp5.addButton("Endturn")
-    .setPosition(25, 25)
+    .setPosition(100, height/1.2)
     .setImages(imgs2)
     .updateSize()
     ;
@@ -73,12 +73,13 @@ void setup() {
 
   PImage[] imgs3 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
   menuButton = cp5.addButton("menuButton")
-    .setPosition(1500, 50)
+    .setPosition(width-350, 0)
     .setImages(imgs3)
     .updateSize()
     ;
   menuButton.hide();
 
+  
   fullScreen();
 
   //mana setup
@@ -147,6 +148,9 @@ public void menuButton() {
   enemy.currentEnemyHealth = enemy.enemyStartingHealth;
   playerHealth.currentHealth = playerHealth.startingHealth;
   playerMana.currentMana = playerMana.startingMana;
+  push();
+  imageMode(CORNER);
+  pop();
   manager.skiftGameState("mainScreen");
   sb.show();
 }

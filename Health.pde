@@ -27,13 +27,13 @@ class Health {
 
   void ui() {
     for (int i=0; i<currentHealth; i++) {
-      image(heart, width/3.75-(heart.width*currentHealth)/2+i*heart.width, height-heart.height);
+      image(heart, width/2-(heart.width*currentHealth)/2+i*heart.width, height-heart.height);
     }
   }
 
 
   void load() {
     heart = loadImage("heart.png");
-    heart.resize(width/20, width/20);
+    heart.resize(width/25, width/25);
   }
 }
