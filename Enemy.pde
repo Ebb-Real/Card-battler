@@ -105,9 +105,11 @@ class Enemy {
       image(enemyHeart, width/2-(enemyHeart.width*currentEnemyHealth)/2+i*enemyHeart.width, 0);
     }
 
-    image(currentIntent, width/4*3, height/2);
-    textSize(height/7);
-    text(Integer.toString(power), width/4*3+currentIntent.width/2, height/2+currentIntent.height/2);
+    image(currentIntent, width/5*4, height/3.5);
+    currentIntent.resize(width/14, height/8);
+    textSize(height/20);
+    text("Enemy Intent", width/5*4+currentIntent.width/2, height/3.5+currentIntent.height-240);
+    text(Integer.toString(power), width/5*4+currentIntent.width/2, height/3.5+currentIntent.height/2+20);
   }
 
   void enemyLoad() {
