@@ -22,7 +22,7 @@ class GameScreen extends GameState {
     {
       push();
       fill(209, 110, 77, 200);
-      rect(width/2, height/2-20, 500, 150, 120);
+      rect(width/2, height/2 - 20, 500, 150, 120);
       pop();
       text("Deck is empty!", width/2, height/2);
       // If the spent time is above the defined duration
@@ -38,7 +38,7 @@ class GameScreen extends GameState {
     {
       push();
       fill(209, 110, 77, 200);
-      rect(width/2, height/2-20, 650, 150, 120);
+      rect(width/2, height/2 - 20, 650, 150, 120);
       pop();
       text("Not enough mana!", width/2, height/2);
       // If the spent time is above the defined duration
@@ -54,7 +54,7 @@ class GameScreen extends GameState {
     {
       push();
       fill(209, 110, 77, 200);
-      rect(width/2, height/2-20, 850, 150, 120);
+      rect(width/2, height/2 - 20, 850, 150, 120);
       pop();
       text("Maximum hand reached!", width/2, height/2);
       // If the spent time is above the defined duration

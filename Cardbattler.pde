@@ -7,9 +7,8 @@ controlP5.Button b1, b2, sb, menuButton, menuButton2;
 
 PImage bg;
 
-
 int startTid;
-int displayTid = 3000; //
+int displayTid = 3000;
 boolean displayTekstEmptyDeck, displayTekstNoMana, displayTekstMaxHand;
 
 //integers and arraylists
@@ -48,14 +47,10 @@ void setup() {
 
   //GUI
   cp5 = new ControlP5(this);
-  //sb = cp5.addButton("StartGame")
-  //  .setPosition(width/2-300, height/2-40)
-  //  .setSize(600, 40)
-  //  ;
 
   PImage[] imgs4 = {loadImage("start1.png"), loadImage("start2.png"), loadImage("start3.png")};
   sb = cp5.addButton("StartGame")
-    .setPosition(width/2-175, height/2-100)
+    .setPosition(width/2 - 175, height/2 - 100)
     .setImages(imgs4)
     .updateSize()
     ;
@@ -78,24 +73,24 @@ void setup() {
 
   PImage[] imgs3 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
   menuButton = cp5.addButton("menuButton")
-    .setPosition(width-350, 0)
+    .setPosition(width - 350, 0)
     .setImages(imgs3)
     .updateSize()
     ;
   menuButton.hide();
 
-    PImage[] imgs5 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
+  PImage[] imgs5 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
   menuButton2 = cp5.addButton("menuButton2")
-    .setPosition(width/2-175, height/2+50)
+    .setPosition(width/2 - 175, height/2 + 50)
     .setImages(imgs5)
     .updateSize()
-    ;  
-    menuButton2.hide();
-    
+    ;
+  menuButton2.hide();
+
   fullScreen();
 
   //mana setup
-  playerMana.currentMana=playerMana.startingMana;
+  playerMana.currentMana = playerMana.startingMana;
 }
 
 void draw() {
@@ -115,16 +110,12 @@ void cardDraw() {
 }
 
 void deckEmpty() {
-  
   displayTekstEmptyDeck = true;
   startTid = millis();
-      // If the spent time is above the defined duration   
-      
-  println("Deck is empty");
 }
 
 void noMana() {
-    displayTekstNoMana = true;
+  displayTekstNoMana = true;
   startTid = millis();
 }
 
@@ -135,7 +126,6 @@ public void controlEvent(ControlEvent theEvent) {
 //function colorA will receive changes from
 //controller with name colorA
 public void StartGame() {
-  println("a button event from colorA: ");
   gameDisplay = true;
   showButton();
   gameStartup();
@@ -148,7 +138,6 @@ public void StartGame() {
 boolean drawn = false;
 public void drawKort() {
   if (drawn == false) {
-    println("a button event from colorC: ");
     cardDraw();
     cardDraw();
     drawn = true;
@@ -156,7 +145,6 @@ public void drawKort() {
 }
 
 public void menuButton() {
-  println("a button event from bruh: ");
   gameDisplay = false;
   showButton();
   deck.clear();
@@ -170,7 +158,6 @@ public void menuButton() {
 }
 
 public void menuButton2() {
-  println("a button event from bruh: ");
   gameDisplay = false;
   showButton();
   deck.clear();
@@ -190,28 +177,25 @@ void showButton() {
     b1.show();
     b2.show();
     menuButton.show();
-  } 
-  else {
+  } else {
     b1.hide();
     b2.hide();
     menuButton.hide();
   }
 }
 
-boolean playerturn=true;
+boolean playerturn = true;
 public void Endturn() {
-  playerturn=false;
+  playerturn = false;
 
   //mana crystal increase
   playerMana.manaIncrease(playerMana.addedManaPerRound);
   //Mana crystal refresh/start of turn set mana
-  playerMana.activeMana=playerMana.currentMana;
+  playerMana.activeMana = playerMana.currentMana;
 
   enemy.enemyTurn();
   enemy.intent();
   drawn = false;
-  println("a button event from Endturn: ");
-  println("health = " + playerHealth.currentHealth);
 }
 
 ArrayList<Card> heldCard = new ArrayList<Card>();
@@ -219,7 +203,7 @@ ArrayList<Card> heldCard = new ArrayList<Card>();
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
     if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2 && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2 && mouseY <= playerHand.handCards.get(i).posY + playerHand.handCards.get(i).cardHeight / 2 && mouseY >= playerHand.handCards.get(i).posY - playerHand.handCards.get(i).cardHeight / 2) {
-      if(heldCard.size() <= 0) {
+      if (heldCard.size() <= 0) {
         heldCard.add(playerHand.handCards.get(i));
       }
       if (heldCard.get(0) == playerHand.handCards.get(i)) {
@@ -239,7 +223,7 @@ void mouseReleased() {
     heldCard.get(0).play();
     if (heldCard.get(0).canAfford) {
       for (int i = 0; i < playerHand.handCards.size(); i++) {
-        if(playerHand.handCards.get(i) == heldCard.get(0)) {
+        if (playerHand.handCards.get(i) == heldCard.get(0)) {
           playerHand.handCards.remove(i);
         }
       }
@@ -253,7 +237,7 @@ void mouseReleased() {
 
 void gameStartup() {
   sb.hide();
-  
+
   //deck
   cardCreator.Create("claw");
   cardCreator.Create("claw");
