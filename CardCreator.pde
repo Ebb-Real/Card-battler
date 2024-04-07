@@ -1,5 +1,6 @@
 class CardCreator {
   Card claw, healingHands, manaVial, dagger, siphonBlood, flamingMana, fireSword;
+  
   CardCreator() {
   }
 
