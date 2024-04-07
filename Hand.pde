@@ -10,12 +10,6 @@ class Hand {
   }
 
   void update() {
-    if (handCards.size() < handLimit) {
-      handIsFull = false;
-    } else {
-      handIsFull = true;
-    }
-
     for (int i = 0; i <= handCards.size() - 1; i++) {
       if (!handCards.get(i).grabbed) {
         handCards.get(i).posX = width/2 - handCards.get(i).cardLength * handCards.size()/2 + i * handCards.get(i).cardLength+handCards.get(i).cardLength/2;
@@ -25,6 +19,11 @@ class Hand {
   }
 
   void addCard(Card c) {
+    if (handCards.size() < handLimit) {
+      handIsFull = false;
+    } else {
+      handIsFull = true;
+    }
     if (!handIsFull) {
       handCards.add(c);
     }
