@@ -67,12 +67,12 @@ class GameScreen extends GameState {
     
     push();
     fill(27, 135, 56, 200);
-    rect(650, height/1.1, 200, 75, 120);
+    rect(675, height/1.1, 200, 75, 120);
     pop();
     deckLength = deck.size();
     textSize(20);
-    text(deckLength, 650, height/1.08);
-    text("Remaining Cards", 650, height/1.1);
+    text(deckLength, 675, height/1.08);
+    text("Remaining Cards", 675, height/1.1);
     
   }
 }
