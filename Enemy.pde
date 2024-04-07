@@ -112,7 +112,7 @@ class Enemy {
 
   void enemyLoad() {
     enemyHeart = loadImage("Enemy Heart.png");
-    enemyHeart.resize(width/20, width/20);
+    enemyHeart.resize(width/25, width/25);
     attackIntent = loadImage("Attack intent.png");
     healIntent = loadImage("Heal intent.png");
     missIntent = loadImage("Miss intent.png");

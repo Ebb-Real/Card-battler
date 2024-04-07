@@ -1,4 +1,4 @@
-class GameState {
+abstract class GameState {
 
   void draw() {
   }
