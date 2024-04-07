@@ -11,6 +11,8 @@ int startTid;
 int displayTid = 3000;
 boolean displayTekstEmptyDeck, displayTekstNoMana, displayTekstMaxHand;
 
+int deckLength;
+
 //integers and arraylists
 ArrayList<Card> deck = new ArrayList<Card>();
 boolean gameDisplay = false;
