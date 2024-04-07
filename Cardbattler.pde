@@ -7,10 +7,11 @@ controlP5.Button b1, b2, sb, menuButton, menuButton2;
 
 PImage bg;
 
-
 int startTid;
 int displayTid = 3000; //
 boolean displayTekstEmptyDeck, displayTekstNoMana, displayTekstMaxHand;
+
+int deckLength;
 
 //integers and arraylists
 ArrayList<Card> deck = new ArrayList<Card>();
