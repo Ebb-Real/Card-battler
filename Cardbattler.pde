@@ -244,10 +244,15 @@ void mouseReleased() {
 
 void gameStartup() {
   sb.hide();
+  
   //deck
   cardCreator.Create("claw");
   cardCreator.Create("claw");
   cardCreator.Create("claw");
+  cardCreator.Create("dagger");
+  cardCreator.Create("dagger");
+  cardCreator.Create("dagger");
+  cardCreator.Create("healing hands");
   cardCreator.Create("healing hands");
   cardCreator.Create("healing hands");
   cardCreator.Create("mana vial");
