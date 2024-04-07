@@ -1,5 +1,7 @@
 //The area where you play your cards
 class PlayArea {
+  float posX;
+  float posY;
   float sizeX;
   float sizeY;
   
@@ -9,9 +11,11 @@ class PlayArea {
   }
   
   void draw() {
+    posX = width/2;
+    posY = height/3;
     push();
     fill(0, 0, 0, 150);
-    rect(width/2, height/3, sizeX, sizeY);
+    rect(posX, posY, sizeX, sizeY);
     pop();
   }
 }
