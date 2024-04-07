@@ -31,11 +31,11 @@ class Mana {
     int manaDifference=currentMana-activeMana;
     //for Brugt mana
     for (int i=0; i<manaDifference; i++) {
-      image(usedManaCrystal, width/1.6-(usedManaCrystal.width*currentMana)/2+activeMana*usedManaCrystal.width+i*usedManaCrystal.width, height/1.17);
+      image(usedManaCrystal, width/2-(usedManaCrystal.width*currentMana)/2+activeMana*usedManaCrystal.width+i*usedManaCrystal.width, height/1.17);
     }
     //for useable mana
     for (int i=0; i<activeMana; i++) {
-      image(manaCrystal, width/1.6-(manaCrystal.width*currentMana)/2+i*manaCrystal.width, height/1.17);
+      image(manaCrystal, width/2-(manaCrystal.width*currentMana)/2+i*manaCrystal.width, height/1.17);
     }
   }
 
