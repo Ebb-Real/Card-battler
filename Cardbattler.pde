@@ -260,10 +260,6 @@ void gameStartup() {
   cardCreator.Create("mana vial");
   cardCreator.Create("mana vial");
   cardCreator.Create("flaming mana");
-  cardCreator.Create("flaming mana");
-  cardCreator.Create("flaming mana");
-  cardCreator.Create("flaming mana");
-  cardCreator.Create("flaming mana");
   Collections.shuffle(deck);
 
   //ui load
