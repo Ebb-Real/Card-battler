@@ -21,10 +21,13 @@ Mana playerMana = new Mana(10, 1, 1);
 Hand playerHand = new Hand(10, 3);
 
 //create enemy object
-Enemy enemy= new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
+Enemy enemy = new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
 
 //create Health object
-Health playerHealth= new Health(10, 10);
+Health playerHealth = new Health(10, 10);
+
+//create play area object
+PlayArea mainPlayArea = new PlayArea(1000, 500);
 
 void setup() {
   bg = loadImage("kiryu.png");
@@ -83,7 +86,6 @@ void setup() {
 }
 
 void draw() {
-  //background(0, 0, 255);
   image(bg, 0, 0);
   manager.draw();
 }
