@@ -21,11 +21,9 @@ class Hand {
   void addCard(Card c) {
     if (handCards.size() < handLimit) {
       handIsFull = false;
+      handCards.add(c);
     } else {
       handIsFull = true;
-    }
-    if (!handIsFull) {
-      handCards.add(c);
     }
   }
   
