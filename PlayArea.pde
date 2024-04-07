@@ -1,12 +1,17 @@
 //The area where you play your cards
-class playArea {
+class PlayArea {
   float sizeX;
   float sizeY;
   
-  playArea(float inputSizeX, float inputSizeY){
+  PlayArea(float inputSizeX, float inputSizeY){
     sizeX = inputSizeX;
     sizeY = inputSizeY;
   }
   
-  //tint();
+  void draw() {
+    push();
+    fill(0, 0, 0, 150);
+    rect(width/2, height/3, sizeX, sizeY);
+    pop();
+  }
 }

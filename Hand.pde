@@ -29,6 +29,7 @@ class Hand {
       handCards.add(c);
     }
   }
+  
   void load() {
     for (int i=0; i<startingHandsize; i++) {
       deck.get(0).imageLoader();
