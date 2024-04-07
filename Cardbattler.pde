@@ -241,21 +241,13 @@ void gameStartup() {
   sb.hide();
 
   //deck
-  cardCreator.Create("claw");
-  cardCreator.Create("claw");
-  cardCreator.Create("claw");
-  cardCreator.Create("dagger");
-  cardCreator.Create("dagger");
-  cardCreator.Create("dagger");
-  cardCreator.Create("siphon blood");
-  cardCreator.Create("siphon blood");
-  cardCreator.Create("fire sword");
-  cardCreator.Create("healing hands");
-  cardCreator.Create("healing hands");
-  cardCreator.Create("healing hands");
-  cardCreator.Create("mana vial");
-  cardCreator.Create("mana vial");
-  cardCreator.Create("flaming mana");
+  cardCreator.Create("claw", 3);
+  cardCreator.Create("dagger", 3);
+  cardCreator.Create("siphon blood", 2);
+  cardCreator.Create("fire sword", 1);
+  cardCreator.Create("healing hands", 3);
+  cardCreator.Create("mana vial", 2);
+  cardCreator.Create("flaming mana", 1);
   Collections.shuffle(deck);
 
   //ui load
