@@ -204,6 +204,7 @@ ArrayList<Card> heldCard = new ArrayList<Card>();
 
 void mouseDragged() {
   for (int i = 0; i < playerHand.handCards.size(); i++) {
+    
     //if mouse over card
     if (mouseX <= playerHand.handCards.get(i).posX + playerHand.handCards.get(i).cardLength / 2
     && mouseX >= playerHand.handCards.get(i).posX - playerHand.handCards.get(i).cardLength / 2
