@@ -22,6 +22,10 @@ class Health {
     currentHealth=currentHealth-damageAmmount;
     if (currentHealth<=0) {
         manager.skiftGameState("gameOverScreen");
+        menuButton2.show();
+        menuButton.hide();
+        b1.hide();
+        b2.hide();
     }
   }
 
