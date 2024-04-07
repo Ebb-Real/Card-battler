@@ -33,7 +33,6 @@ class GameScreen extends GameState {
       }
     }
 
-
     if (displayTekstNoMana)
     {
       push();
