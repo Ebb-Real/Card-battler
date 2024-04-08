@@ -32,7 +32,7 @@ class CardCreator {
       break;
     case "siphon blood":
       for (int i = 0; i < numberOfCards; i++) {
-        deck.add(siphonBlood = new BygCard().setNavn("Siphon Blood").setDescription("Deal 2 damage to \n opponent and heal yourself \n for 1 HP").setManaCost(3).setDamage(2).setHeal(1).setPictureFile("blood_magic.png").build());
+        deck.add(siphonBlood = new BygCard().setNavn("Siphon Blood").setDescription("Deal 2 damage to \n opponent and heal \n yourself for 1 HP").setManaCost(3).setDamage(2).setHeal(1).setPictureFile("blood_magic.png").build());
       }
       break;
     case "fire sword":

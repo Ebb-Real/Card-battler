@@ -9,8 +9,8 @@ class Card {
   int heal;
   float posX;
   float posY;
-  int cardLength = 250;
-  int cardHeight = 375;
+  int cardLength = width/10;
+  int cardHeight = height/4;
   boolean grabbed = false;
   boolean canAfford;
   PImage cardPicture;
@@ -24,21 +24,22 @@ class Card {
   }
 
   void draw() {
+    println(height);
     rectMode(CENTER);
     textAlign(CENTER);
     imageMode(CENTER);
     rect(posX, posY, cardLength, cardHeight, 15);
     push();
     fill(0);
-    rect(posX, posY - cardHeight/5, cardLength - 20, cardHeight / 3);
+    rect(posX, posY - cardHeight / 5, cardLength - 20, cardHeight / 3);
     image(cardPicture, posX, posY - cardHeight/5);
-    textSize(30);
+    textSize(width/90);
     text(name, posX, posY - cardHeight/2.4);
     fill(255, 0, 0);
-    image(manaIcon, posX + cardLength / 2 - 27.5, posY - cardHeight/2 + 10);
-    text(Integer.toString(manaCost), posX + cardLength / 2 - 26, posY - cardHeight / 2 + 20);
+    image(manaIcon, posX + cardLength / 2.5, posY - cardHeight / 2);
+    text(Integer.toString(manaCost), posX + cardLength / 2.5, posY - cardHeight / 2.2);
     fill(0);
-    textSize(20);
+    textSize(width/100);
     text(description, posX, posY + cardHeight/30);
     pop();
   }
