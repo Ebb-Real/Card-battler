@@ -1,5 +1,4 @@
-abstract class GameState {
+interface GameState {
 
-  void draw() {
-  }
+  void draw();
 }

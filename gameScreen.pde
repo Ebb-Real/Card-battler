@@ -1,4 +1,4 @@
-class GameScreen extends GameState {
+class GameScreen implements GameState {
   PImage ancientClock;
 
   GameScreen() {

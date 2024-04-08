@@ -1,4 +1,4 @@
-class WinScreen extends GameState {
+class WinScreen implements GameState{
 
   WinScreen() {
   }

@@ -1,4 +1,4 @@
-class GameOverScreen extends GameState {
+class GameOverScreen implements GameState {
 
   GameOverScreen() {
   }
