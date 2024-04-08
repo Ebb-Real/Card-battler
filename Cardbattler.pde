@@ -33,7 +33,7 @@ Enemy enemy = new Enemy(10, 15, 1, 3, 1, 3, 3, 5);
 Health playerHealth = new Health(10, 10);
 
 //create play area object
-PlayArea mainPlayArea = new PlayArea(1000, 500);
+PlayArea mainPlayArea = new PlayArea(width*8, height*4);
 
 void setup() {
   bg = loadImage("kiryu.png");
