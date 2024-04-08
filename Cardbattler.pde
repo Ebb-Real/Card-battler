@@ -105,8 +105,6 @@ void cardDraw() {
     deckEmpty();
     return;
   }
-  
-  println(deck.get(0).name);
   playerHand.addCard(deck.get(0));
   deck.get(0).imageLoader();
   deck.remove(0);
@@ -253,7 +251,7 @@ void mouseReleased() {
 
 void gameStartup() {
   sb.hide();
-
+  
   //deck
   cardCreator.Create("claw", 3);
   cardCreator.Create("dagger", 3);

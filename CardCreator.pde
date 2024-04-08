@@ -15,6 +15,7 @@ class CardCreator {
       for (int i = 0; i < numberOfCards; i++) {
         deck.add(healingHands = new BygCard().setNavn("Healing Hands").setDescription("Heal for 2 HP").setManaCost(2).setHeal(2).setPictureFile("healing.jpg").build());
       }
+      break;
     case "mana vial":
       for (int i = 0; i < numberOfCards; i++) {
         deck.add(manaVial = new BygCard().setNavn("Mana Vial").setDescription("Increase mana by 1 \n permenantly").setManaCost(0).setManaAdd(1).setPictureFile("mana_vial.png").build());
