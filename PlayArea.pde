@@ -15,7 +15,7 @@ class PlayArea {
     posY = height/3;
     push();
     fill(0, 0, 0, 150);
-    rect(posX, posY, sizeX, sizeY);
+    rect(posX, posY, sizeX, sizeY, 30);
     pop();
   }
 }
