@@ -36,7 +36,6 @@ Health playerHealth = new Health(10, 10);
 PlayArea mainPlayArea = new PlayArea(width*8, height*4);
 
 void setup() {
-    ///size(800,800);
   fullScreen();
   
   bg = loadImage("kiryu.png");
