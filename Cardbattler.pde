@@ -92,7 +92,7 @@ void setup() {
    imgs3[i].resize(width/6, height/8);
   }
   menuButton = cp5.addButton("menuButton")
-    .setPosition(width - 350, 0)
+    .setPosition(width - imgs3[1].width, 0)
     .setImages(imgs3)
     .updateSize()
     ;
@@ -103,7 +103,7 @@ void setup() {
    imgs5[i].resize(width/6, height/8);
   }
   menuButton2 = cp5.addButton("menuButton2")
-    .setPosition(width/2 - 175, height/2 + 50)
+    .setPosition(width/2 - imgs5[1].width/2, height/1.8)
     .setImages(imgs5)
     .updateSize()
     ;
