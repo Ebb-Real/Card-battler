@@ -66,7 +66,7 @@ class GameScreen implements GameState {
     
     push();
     fill(27, 135, 56, 200);
-    rect(width/3.2, height/1.1, width/14, height/20, 120);
+    rect(width/3.2, height/1.1, width/14, height/20, 15);
     pop();
     deckLength = deck.size();
     textSize(width/125);
