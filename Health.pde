@@ -14,7 +14,6 @@ class Health {
     if (currentHealth < maxHealth) {
       currentHealth = currentHealth + healAmmount;
     } else {
-      println("you've reached max health");
     }
   }
 

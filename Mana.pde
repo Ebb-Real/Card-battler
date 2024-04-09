@@ -16,7 +16,6 @@ class Mana {
     if (currentMana < maxMana) {
       currentMana = currentMana + manaAmmount;
     } else {
-      println("you've reached maximum potential no more mana for you idiot");
     }
   }
 

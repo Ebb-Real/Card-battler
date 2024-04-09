@@ -31,7 +31,6 @@ class Enemy {
     switch(action) {
       case (0):
       power = 0;
-      println("miss");
       currentIntent = missIntent;
       break;
       case(1):
@@ -41,20 +40,17 @@ class Enemy {
       case (5):
       power = int(random(attackMinimum, attackMaximum));
       currentIntent = attackIntent;
-      println("attack " + power);
       break;
       case (6):
       case (7):
       case (8):
       power = int(random(healMinimum, healMaximum));
       currentIntent = healIntent;
-      println("heal " + power);
       break;
       case (9):
       case (10):
       power = int(random(critMinimum, critMaximum));
       currentIntent = critIntent;
-      println("crit " + power);
       break;
     }
   }

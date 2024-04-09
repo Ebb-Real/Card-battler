@@ -36,6 +36,9 @@ Health playerHealth = new Health(10, 10);
 PlayArea mainPlayArea = new PlayArea(width*8, height*4);
 
 void setup() {
+    ///size(800,800);
+  fullScreen();
+  
   bg = loadImage("kiryu.png");
   bg.resize(width, height);
 
@@ -51,13 +54,21 @@ void setup() {
   cp5 = new ControlP5(this);
 
   PImage[] imgs4 = {loadImage("start1.png"), loadImage("start2.png"), loadImage("start3.png")};
+    for (int i = 0; i < imgs4.length; i = i +1 ) {
+   imgs4[i].resize(width/6, height/6);
+  }
   sb = cp5.addButton("StartGame")
     .setPosition(width/2 - 175, height/2 - 100)
     .setImages(imgs4)
     .updateSize()
     ;
 
+
   PImage[] imgs = {loadImage("Draw Card1.png"), loadImage("Draw Card2.png"), loadImage("Draw Card3.png")};
+  for (int i = 0; i < imgs.length; i = i +1 ) {
+   imgs[i].resize(width/12, width/12);
+  }
+  //imgs.resize(width/2, height/2);
   b1 = cp5.addButton("drawKort")
     .setPosition(350, height/1.2)
     .setImages(imgs)
@@ -66,6 +77,9 @@ void setup() {
   b1.hide();
 
   PImage[] imgs2 = {loadImage("End Turn1.png"), loadImage("End Turn2.png"), loadImage("End Turn3.png")};
+    for (int i = 0; i < imgs2.length; i = i +1 ) {
+   imgs2[i].resize(width/12, width/12);
+  }
   b2 = cp5.addButton("Endturn")
     .setPosition(100, height/1.2)
     .setImages(imgs2)
@@ -74,6 +88,9 @@ void setup() {
   b2.hide();
 
   PImage[] imgs3 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
+    for (int i = 0; i < imgs3.length; i = i +1 ) {
+   imgs3[i].resize(width/6, height/8);
+  }
   menuButton = cp5.addButton("menuButton")
     .setPosition(width - 350, 0)
     .setImages(imgs3)
@@ -82,6 +99,9 @@ void setup() {
   menuButton.hide();
 
   PImage[] imgs5 = {loadImage("Menubutton1.png"), loadImage("Menubutton2.png"), loadImage("Menubutton3.png")};
+    for (int i = 0; i < imgs5.length; i = i +1 ) {
+   imgs5[i].resize(width/6, height/8);
+  }
   menuButton2 = cp5.addButton("menuButton2")
     .setPosition(width/2 - 175, height/2 + 50)
     .setImages(imgs5)
@@ -89,7 +109,6 @@ void setup() {
     ;
   menuButton2.hide();
 
-  fullScreen();
 
   //mana setup
   playerMana.currentMana = playerMana.startingMana;
@@ -122,7 +141,6 @@ void noMana() {
 }
 
 public void controlEvent(ControlEvent theEvent) {
-  println(theEvent.getController().getName());
 }
 
 //function colorA will receive changes from

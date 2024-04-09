@@ -35,7 +35,6 @@ class Hand {
   }
 
   void handFull() {
-    println("Hand is full");
     displayTekstMaxHand = true;
     startTid = millis();
   }

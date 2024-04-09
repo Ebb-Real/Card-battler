@@ -24,7 +24,6 @@ class Card {
   }
 
   void draw() {
-    println(height);
     rectMode(CENTER);
     textAlign(CENTER);
     imageMode(CENTER);
