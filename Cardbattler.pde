@@ -124,7 +124,6 @@ void mouseReleased() {
         }
       }
     }
-    heldCard.remove(0);
   }
   if (heldCard.size() > 0) {
     heldCard.remove(0);
