@@ -81,8 +81,6 @@ void noMana() {
   startTid = millis();
 }
 
-
-
 ArrayList<Card> heldCard = new ArrayList<Card>();
 
 void mouseDragged() {
