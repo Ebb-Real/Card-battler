@@ -108,7 +108,6 @@ void setup() {
     ;
   menuButton2.hide();
 
-
   //mana setup
   playerMana.currentMana = playerMana.startingMana;
 }
