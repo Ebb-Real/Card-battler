@@ -105,8 +105,8 @@ void mouseDragged() {
 }
 
 void mouseReleased() {
-  for (int i = 0; i < playerHand.handCards.size(); i++) {
-    playerHand.handCards.get(i).grabbed = false;
+  for (int i = 0; i < heldCard.size(); i++) {
+    heldCard.get(0).grabbed = false;
   }
   
   //if mouse over play area
